@@ -1,0 +1,68 @@
+    1  sudo apt install gcc
+    2  sudo apt install make
+    3  sudo snap install clion --classic
+    4  pwd
+    5  cd
+    6  cd Desktop/
+    7  ls -latr ; mkdir cs149 ; cs149
+    8  git init
+    9  sudo apt install git
+   10  git init
+   11  git config --global user.email "abel.seno@sjsu.edu"
+   12  git config --global user.name "Abel Seno"
+   13  mkdir WS1
+   14  cd WS1
+   15  got add
+   16  git add
+   17  git add .
+   18  git add cmds.log *.c
+   19  gcc
+   20  gcc mycode.c -o mucode
+   21  sudo apt install build-essential dkms linux-headers-$(uname -r)
+   22  sudo apt-get install virtualbox-guest-utils
+   23  sudo apt-get upgrade
+   24  cd Desktop
+   25  cd WS1
+   26  touch 1_15.c
+   27  gcc 1_15.c -o 1_15
+   28  ./1_15
+   29  ./1_15.c
+   30  touch 1_16.c
+   31  gcc 1_16.c -o 1_16
+   32  ./1_16
+   33  touch 1_17.c
+   34  gcc 1_17.c -o 1_17
+   35  ./1_17
+   36  cd Desktop
+   37  cd WS1
+   38  ./1_17
+   39  cd Desktop/WS1
+   40  ./1_17
+   41  touch 1_18.c
+   42  gcc 1_18.c -o 1_18
+   43  ./1_18
+   44  touch 1_19.c
+   45  gcc 1_19.c -o 1_19
+   46  ./1_19
+   47  touch 1_20.c
+   48  gcc 1_20.c -o 1_20
+   49  ./1_20
+   50  gcc 1_15.c -o 1_15
+   51  ./1_15
+   52  git init
+   53  git barnch
+   54  git branch
+   55  pwd
+   56  cd ~
+   57  cd Desktop/
+   58  ls -latr ; mkdir cs149 ; cd cs149
+   59  git init
+   60  git remote add origin https://abelseno30@bitbucket.org/abelseno/cs149.git
+   61  git config --global user.email "abel.seno@sjsu.edu"
+   62  git config --global user.name "abelseno30"
+   63  mkdir WS1
+   64  cd WS1
+   65  git add .
+   66  wget -O out.pdf https://tinyurl.com/yy94jltt
+   67  ls -latr
+   68  history > cmds.log
