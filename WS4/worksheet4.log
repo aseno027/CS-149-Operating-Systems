@@ -1,0 +1,376 @@
+    1  sudo apt install gcc
+    2  sudo apt install make
+    3  sudo snap install clion --classic
+    4  pwd
+    5  cd
+    6  cd Desktop/
+    7  ls -latr ; mkdir cs149 ; cs149
+    8  git init
+    9  sudo apt install git
+   10  git init
+   11  git config --global user.email "abel.seno@sjsu.edu"
+   12  git config --global user.name "Abel Seno"
+   13  mkdir WS1
+   14  cd WS1
+   15  got add
+   16  git add
+   17  git add .
+   18  git add cmds.log *.c
+   19  gcc
+   20  gcc mycode.c -o mucode
+   21  sudo apt install build-essential dkms linux-headers-$(uname -r)
+   22  sudo apt-get install virtualbox-guest-utils
+   23  sudo apt-get upgrade
+   24  cd Desktop
+   25  cd WS1
+   26  touch 1_15.c
+   27  gcc 1_15.c -o 1_15
+   28  ./1_15
+   29  ./1_15.c
+   30  touch 1_16.c
+   31  gcc 1_16.c -o 1_16
+   32  ./1_16
+   33  touch 1_17.c
+   34  gcc 1_17.c -o 1_17
+   35  ./1_17
+   36  cd Desktop
+   37  cd WS1
+   38  ./1_17
+   39  cd Desktop/WS1
+   40  ./1_17
+   41  touch 1_18.c
+   42  gcc 1_18.c -o 1_18
+   43  ./1_18
+   44  touch 1_19.c
+   45  gcc 1_19.c -o 1_19
+   46  ./1_19
+   47  touch 1_20.c
+   48  gcc 1_20.c -o 1_20
+   49  ./1_20
+   50  gcc 1_15.c -o 1_15
+   51  ./1_15
+   52  git init
+   53  git barnch
+   54  git branch
+   55  pwd
+   56  cd ~
+   57  cd Desktop/
+   58  ls -latr ; mkdir cs149 ; cd cs149
+   59  git init
+   60  git remote add origin https://abelseno30@bitbucket.org/abelseno/cs149.git
+   61  git config --global user.email "abel.seno@sjsu.edu"
+   62  git config --global user.name "abelseno30"
+   63  mkdir WS1
+   64  cd WS1
+   65  git add .
+   66  wget -O out.pdf https://tinyurl.com/yy94jltt
+   67  ls -latr
+   68  history > cmds.log
+   69  git add cmds.log *.c
+   70  git add cmds.log 1_15.c
+   71  git add cmds.log *.c
+   72  git commit -m "First commit" -a
+   73  git branch
+   74  git push -u origin master
+   75  git fetch origin master
+   76  git pull origin master
+   77  git push -u origin master
+   78  git commit -m -a "First commit"
+   79  git commit -a -m "First commit"
+   80  git push -u origin master
+   81  git fetch origin
+   82  git merge origin master
+   83  git push -u origin master
+   84  git add -f cmds.log
+   85  git push -u origin master
+   86  git pull origin master
+   87  git push -u origin master
+   88  git pull origin master
+   89  git pull --rebase origin master
+   90  git push -u origin master
+   91  git clone -b master https://abelseno30@bitbucket.org/abelseno/cs149.git cs149_abelseno
+   92  cd cs149_abelseno/WS1/
+   93  gcc -o 1_19.c 1_19
+   94  gcc 1_19.c -o 1_19
+   95  git clone -b master https://abelseno30@bitbucket.org/abelseno/cs149.git cs149_abelseno
+   96  gcc 1_19.c -o 1_19
+   97  gcc 1_20.c -o 1_20
+   98  ./1_20
+   99  gcc 1_19.c -o 1_19
+  100  cd ~
+  101  cd cs149_abelseno/WS1/
+  102  gcc 1_19.c -o 1_19
+  103  git clone -b master https://abelseno30@bitbucket.org/abelseno/cs149.git cs149_abelseno
+  104  cd cs149_abelseno/WS1/
+  105  gcc 1_19.c -o 1_19
+  106  ./1_19
+  107  cd Desktop/cs149/A1/
+  108  gcc matrixmult.c -o matrixmult
+  109  ./matrixmult A1.txt B2.txt W1.txt
+  110  ./matrixmult
+  111  ./matrixmult A1.txt B2.txt W1.txt
+  112  git config --global user.email "abeljseno30@gmail.com"
+  113  git config --global user.name "ajseno"
+  114  git clone -b master https://abelseno30@bitbucket.org/abelseno/cs149.git cs149_abelseno
+  115  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  116  git clone -b master https://ajseno@bitbucket.org/abelseno/cs149.git cs149_abelseno
+  117  cd cs149_abelseno/
+  118  gcc 1_20.c -o 1_20
+  119  cs WS1/
+  120  cd WS1/
+  121  gcc 1_20.c -o 1_20
+  122  ./1_20
+  123  git config --global user.email "abel.seno@sjsu.edu"
+  124  git config --global user.name "abelseno"
+  125  ./main A B C
+  126  A B C
+  127  ./untitled A B C
+  128  gcc main.c -o test
+  129  ./test A B C
+  130  ./test A
+  131  ./test
+  132  ./test A1.txt B2.txt W1.txt
+  133  run
+  134  ./matrixmult A1.txt B2.txt W1.txt
+  135  cd Desktop/cs149/A1/
+  136  ./matrixmult A1.txt B2.txt W1.txt
+  137  gcc matrixmult.c -o mm
+  138  ./mm
+  139  ./mm A1.txt B2.txt W1.txt
+  140  ./mm 
+  141  ./mm A1.txt B2.txt W1.txt
+  142  ./mm A1.txt B2.txt W
+  143  gcc matrixmult.c -o mm
+  144  ./mm A1.txt B2.txt W1.txt
+  145  gcc matrixmult.c -o mm
+  146  ./mm A1.txt B2.txt W1.txt
+  147  gcc matrixmult.c -o mm
+  148  ./mm A1.txt B2.txt W1.txt
+  149  gcc matrixmult.c -o mm
+  150  ./mm A1.txt B2.txt W1.txt
+  151  gcc matrixmult.c -o mm
+  152  ./mm A1.txt B2.txt W1.txt
+  153  gcc matrixmult.c -o mm
+  154  ./mm A1.txt B2.txt W1.txt
+  155  gcc matrixmult.c -o mm
+  156  ./mm A1.txt B2.txt W1.txt
+  157  gcc matrixmult.c -o mm
+  158  ./mm A1.txt B2.txt W1.txt
+  159  gcc matrixmult.c -o mm
+  160  ./mm A1.txt B2.txt W1.txt
+  161  cd Desktop/Test/cs149/A1/
+  162  gcc testMM.c -o test
+  163  ./test A1.txt B2.txt W1.txt
+  164  gcc testMM.c -o test -Wall Werror
+  165  `
+  166  cd Desktop/cs149/A1/
+  167  gcc matrixmult.c -o matrixmult
+  168  printf("[ ");
+  169  gcc matrixmult.c -o matrixmult
+  170  ./matrixmult
+  171  ./matrixmult A1.txt B2.txt W1.txt
+  172  /matrixmult A1.txt W1.txt B2.txt
+  173  ./matrixmult A1.txt W1.txt B2.txt
+  174  gcc matrixmult.c -o matrixmult
+  175  ./matrixmult A1.txt W1.txt B2.txt
+  176  gcc matrixmult.c -o matrixmult
+  177  ./matrixmult A1.txt W1.txt B2.txt
+  178  gcc matrixmult.c -o matrixmult
+  179  ./matrixmult A1.txt W1.txt B2.txt
+  180  gcc matrixmult.c -o matrixmult
+  181  ./matrixmult A1.txt W1.txt B2.txt
+  182  gcc matrixmult.c -o matrixmult
+  183  ./matrixmult A1.txt W1.txt B2.txt
+  184  gcc matrixmult.c -o matrixmult
+  185  ./matrixmult A1.txt W1.txt B2.txt
+  186  gcc matrixmult.c -o matrixmult
+  187  ./matrixmult A1.txt W1.txt B2.txt
+  188  gcc matrixmult.c -o matrixmult
+  189  ./matrixmult A1.txt W1.txt B2.txt
+  190  gcc matrixmult.c -o matrixmult
+  191  ./matrixmult A1.txt W1.txt B2.txt
+  192  gcc matrixmult.c -o matrixmult
+  193  ./matrixmult A1.txt W1.txt B2.txt
+  194  gcc matrixmult.c -o matrixmult
+  195  ./matrixmult A1.txt W1.txt B2.txt
+  196  gcc matrixmult.c -o matrixmult
+  197  ./matrixmult A1.txt W1.txt B2.txt
+  198  gcc matrixmult.c -o matrixmult
+  199  ./matrixmult A1.txt W1.txt B2.txt
+  200  gcc matrixmult.c -o matrixmult
+  201  ./matrixmult A1.txt W1.txt B2.txt
+  202  gcc matrixmult.c -o matrixmult
+  203  ./matrixmult A1.txt W1.txt B2.txt
+  204  gcc matrixmult.c -o matrixmult
+  205  ./matrixmult A1.txt W1.txt B2.txt
+  206  gcc matrixmult.c -o matrixmult
+  207  cd Desktop/cs149/A1/
+  208  gcc -o matrixmult matrixmult.c -Wall -Werror
+  209  ./matrixmult  test/A.txt test/W.txt  test/B.txt
+  210  ./matrixmult test/A1.txt test/W1.txt test/B2.txt
+  211  ./matrixmult A1.txt W1.txt B2.txt
+  212  gcc -o matrixmult matrixmult.c -Wall -Werror
+  213  ./matrixmult test/A1.txt test/W1.txt test/B2.txt
+  214  gcc -o matrixmult matrixmult.c -Wall -Werror
+  215  ./matrixmult test/A1.txt test/W1.txt test/B2.txt
+  216  ./matrixmult test/A1.txt test/W1.txt test/B2.txt > /dev/null
+  217  ./matrixmult > /dev/null
+  218  cd ~
+  219  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  220  cd Desktop/cs149/A1/
+  221  git add .
+  222  git commit -m "assignment 1" -a
+  223  git push -u origin master
+  224  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  225  git clone https://abelseno30@bitbucket.org/abelseno/cs149.
+  226  cd `
+  227  a
+  228  date
+  229  pwd
+  230  cd Desktop/
+  231  ls -latr  ; mkdir WS2 ; cd WS2
+  232  ls -latr
+  233  echo $?
+  234  man ps
+  235  ps aux
+  236  top
+  237  history > worksheet2.log
+  238  head worksheet2.log
+  239  tail worksheet2.log
+  240  cat worksheet2.log
+  241  cd `
+  242  q
+  243  cd~
+  244  quit
+  245  cd `
+  246  cd ~
+  247  cd Desktop/cs149/WS2
+  248  gcc 2_25.c -o 2_25
+  249  ./2_25
+  250  gcc 2_29.c -o 2_29
+  251  gcc 2_29.c -lm 2_29
+  252  ./-lm 2_29
+  253  -lm 2_29
+  254  gcc 2_29.c -o 2_29 -lm
+  255  ./2_29
+  256  gcc 2_32.c -o 2_32
+  257  ./2_32
+  258  gcc 2_34.c -o 2_34
+  259  ./2_34
+  260  gcc 3_22.c -o 3_22
+  261  ./3_22
+  262  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  263  git add .
+  264  git commit -m "finished worksheet 2" -a
+  265  git branch
+  266  git push -u origin master
+  267  cd ~
+  268  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  269  cd Desktop/cs149/WS2
+  270  git add .
+  271  git commit -m "finished worksheet 2" -a
+  272  git push -u origin master
+  273  git add worksheet2.log
+  274  -f
+  275  git add worksheet2.log
+  276  git config advice.addIgnoredFile false
+  277  git add worksheet2.log
+  278  q
+  279  cd Desktop/cs149/A1/
+  280  gcc matricmult.c -o matrixmult
+  281  gcc matrixmult.c -o matrixmult
+  282  ./matrixmult test/A1.txt test/W1.txt test/B2.txt
+  283  gcc matrixmult.c -o matrixmult
+  284  ./matrixmult test/A1.txt test/W1.txt test/B2.txt
+  285  ./matrixmult test/A2.txt test/W2.txt test/B2.txt
+  286  ./matrixmult test/A3.txt test/W3.txt test/B3.txt
+  287  ./matrixmult test/A3.txt test/W3.txt test/B4.txt
+  288  ./matrixmult
+  289  ./matrixmult test/A3.txt test/W3.txt test/B4.txt > /dev/null
+  290  gcc matrixmult.c -o matrixmult
+  291  ./matrixmult test/A3.txt test/W3.txt test/B4.txt > /dev/null
+  292  ./matrixmult test/A3.txt test/W3.txt test/B4.txt
+  293  gcc matrixmult.c -o matrixmult
+  294  ./matrixmult test/A3.txt test/W3.txt test/B4.txt
+  295  ./matrixmult test/A3.txt test/W3.txt test/B3.txt
+  296  gcc matrixmult.c -o matrixmult
+  297  ./matrixmult test/A1.txt test/W1.txt test/B1.txt
+  298  ./matrixmult test/A2.txt test/W2.txt test/B2.txt
+  299  ./matrixmult test/A3.txt test/W3.txt test/B3.txt
+  300  ./matrixmult
+  301  ./matrixmult test/A3.txt test/W3.txt test/B4.txt
+  302  ./matrixmult test/A3.txt test/W3.txt test/B4.txt 2> /dev/null
+  303  ./matrixmult test/A3.txt test/W3.txt test/B4.txt > /dev/null
+  304  gcc matrixmult.c -o matrixmult -Wall -Werror
+  305  ./matrixmult test/A3.txt test/W3.txt test/B3.txt
+  306  cd ~
+  307  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  308  cd Desktop/cs149/A1/
+  309  git add .
+  310  git commit -m "added comments and completed README.md file" -a
+  311  git push -u origin master
+  312  cd ~
+  313  git clone https://abelseno30@bitbucket.org/cs-149-fall2023/a1.git
+  314  cd Desktop/cs149/A1/
+  315  git add .
+  316  git commit -m "added comments, added to README.md, added A1/test subdirectory" -a
+  317  cd ~
+  318  git pul;
+  319  git pull
+  320  cd Desktop/cs149/A1/
+  321  git add .
+  322  git commit -m "added comments, added to README.md, added A1/test subdirectory" -a
+  323  cd ~
+  324  git pull https://abelseno30@bitbucket.org/cs-149-fall2023/a1.git
+  325  git commit -m "added comments, added to README.md, added A1/test subdirectory" -a
+  326  cd a1/
+  327  git commit -m "added comments, added to README.md, added A1/test subdirectory" -a
+  328  git push -u origin master
+  329  git pull https://abelseno30@bitbucket.org/cs-149-fall2023/a1.git
+  330  cd~
+  331  a
+  332  cd ~
+  333  git pull https://abelseno30@bitbucket.org/cs-149-fall2023/a1.git
+  334  cd a1/test/
+  335  git add .
+  336  git commit -m "added comments, added to README.md, added A1/test subdirectory" -a
+  337  git push -u origin master
+  338  cd ~
+  339  git clone -b master https://abelseno30@bitbucket.org/abelseno/cs149.git cs149_abelseno
+  340  cd cs149_abelseno/
+  341  gcc -o matrixmult matrixmult.c -Wall -Werror
+  342  cd A1/
+  343  gcc -o matrixmult matrixmult.c -Wall -Werror
+  344  ./matrixmult  test/A1.txt test/W1.txt  test/B1.txt
+  345  ./matrixmult  test/A2.txt test/W2.txt  test/B2.txt
+  346  ./matrixmult  test/A3.txt test/W3.txt  test/B3.txt
+  347  cd ~
+  348  cd cs149_abelseno/WS2
+  349  ./2_25
+  350  cd ~
+  351  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  352  cd cs149
+  353  cd WS4
+  354  gcc 5_22.c -o 5_22
+  355  ./5_22
+  356  gcc 6_20.c -o 6_20
+  357  ./6_20
+  358  gcc 6_30.c -o 6_30
+  359  ./6_30
+  360  cd ~
+  361  wget http://www.apuebook.com/src.3e.tar.gz
+  362  gunzip src.3e.tar.gz
+  363  tar xvf src.3e.tar
+  364  cd apue.3e
+  365  cd proc
+  366  make all
+  367  ./fork1
+  368  ./fork2
+  369  pwd
+  370  pstree
+  371  ps -a -f -x
+  372  top
+  373  man kill
+  374  echo $?
+  375  echo $$
+  376  history > worksheet4.log
