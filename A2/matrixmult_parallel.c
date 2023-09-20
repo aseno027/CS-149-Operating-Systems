@@ -68,9 +68,9 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    int A[MATRIX_SIZE][MATRIX_SIZE];
-    int W[MATRIX_SIZE][MATRIX_SIZE];
-    int result[MATRIX_SIZE][MATRIX_SIZE];
+    int A[MATRIX_SIZE][MATRIX_SIZE] = 0;
+    int W[MATRIX_SIZE][MATRIX_SIZE] = 0;
+    int result[MATRIX_SIZE][MATRIX_SIZE] = 0;
 
     if (readMatrixFile(argv[1], MATRIX_SIZE, MATRIX_SIZE, A) == 1)
         return 1; 
@@ -86,14 +86,14 @@ int main(int argc, char *argv[]) {
             return 1;
         }
 
-        pid_t child_pid = fork();
+        pid_t pid = fork();
 
-        if (child_pid == -1) {
+        if (pid == -1) {
             perror("Fork failed");
             return 1;
         }
         // Child process
-        if (child_pid == 0) { 
+        if (pid == 0) { 
             close(pipes[i][0]); 
 
             // Matrix  multipication
