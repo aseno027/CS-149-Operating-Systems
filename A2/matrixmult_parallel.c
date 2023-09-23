@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <time.h>
 
 #define MATRIX_SIZE 8
 
@@ -67,10 +68,14 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Terminating, exit code 1.\n");
         return 1;
     }
+    struct timespec start, finish;
+    double elapsed;
+    
+    clock_gettime(CLOCK_MONOTONIC, &start);
 
-    int A[MATRIX_SIZE][MATRIX_SIZE] = 0;
-    int W[MATRIX_SIZE][MATRIX_SIZE] = 0;
-    int result[MATRIX_SIZE][MATRIX_SIZE] = 0;
+    int A[MATRIX_SIZE][MATRIX_SIZE];
+    int W[MATRIX_SIZE][MATRIX_SIZE];
+    int result[MATRIX_SIZE][MATRIX_SIZE];
 
     if (readMatrixFile(argv[1], MATRIX_SIZE, MATRIX_SIZE, A) == 1)
         return 1; 
@@ -104,7 +109,7 @@ int main(int argc, char *argv[]) {
             exit(0);
         }
     }
-
+   
     // Parent process
     for (int i = 0; i < MATRIX_SIZE; i++) {
         close(pipes[i][1]); // Close the write end of the pipe
@@ -115,6 +120,7 @@ int main(int argc, char *argv[]) {
 
         wait(NULL);
     }
+    
     //print results and the execution time
     printf("Result of A*W = [\n");
     for (int i = 0; i < MATRIX_SIZE; i++) {
@@ -124,6 +130,10 @@ int main(int argc, char *argv[]) {
         printf("\n");
     }
     printf("]\n");
+    
+    clock_gettime(CLOCK_MONOTONIC, &finish);
+    elapsed = (finish.tv_sec - start.tv_sec);
+    printf("Runtime %f seconds\n", elapsed);
 
     return 0;
 }
