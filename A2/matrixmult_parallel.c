@@ -50,7 +50,7 @@ int readMatrixFile(const char *filename, int matrix[ROWS][COLS]){
  * Input parameters: matrixA, matrixW, resultMatrix
  * Returns: void
 **/
-void matrixCalculation(int matrixA[ROWS][ROWS], int matrixW[ROWS][COLS], int resultMatrix[ROWS][COLS]) {
+void matrixCalculation(int matrixA[ROWS][COLS], int matrixW[ROWS][COLS], int resultMatrix[ROWS][COLS]) {
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS; j++) {
             resultMatrix[i][j] = 0;
