@@ -5,8 +5,8 @@
 #include <sys/wait.h>
 #include <time.h>
 
-#define MATRIX_SIZE 8
-
+#define ROWS 8
+#define COLS 8
 
 /**
  * This function reads a matrix from a file and saves it
@@ -14,7 +14,7 @@
  * Input parameters: filename, numRows, numCols, matrix
  * Returns: a integer (1 == fail or 0 == success)
 **/
-int readMatrixFile(const char *filename, int numRows, int numCols, int matrix[numRows][numCols]){
+int readMatrixFile(const char *filename, int matrix[ROWS][COLS]){
     FILE *fp = fopen(filename,"r") ;
     if(fp == NULL){
         fprintf(stderr, "error: cannot open file %s\n", filename);
@@ -25,12 +25,12 @@ int readMatrixFile(const char *filename, int numRows, int numCols, int matrix[nu
     const char s[2] = " ";
     char *token;
     //Loop through each row in the matrix file
-    for (int i = 0; i < numRows; i++) {
+    for (int i = 0; i < ROWS; i++) {
     	char values[80];
     	fgets(values, sizeof(values), fp);
     	token = strtok(values, s); //get string in matrix (number)
     	//Loop through each column in the matrix
-        for (int j = 0; j < numCols; j++) {
+        for (int j = 0; j < COLS; j++) {
             if (token != NULL) {
                 matrix[i][j] = atoi(token); //convert string to an interger and save
                 token = strtok(NULL, s);
@@ -50,11 +50,11 @@ int readMatrixFile(const char *filename, int numRows, int numCols, int matrix[nu
  * Input parameters: matrixA, matrixW, resultMatrix
  * Returns: void
 **/
-void matrixCalculation(int matrixA[MATRIX_SIZE][MATRIX_SIZE], int matrixW[MATRIX_SIZE][MATRIX_SIZE], int resultMatrix[MATRIX_SIZE][MATRIX_SIZE]) {
-    for (int i = 0; i < 1; i++) {
-        for (int j = 0; j < MATRIX_SIZE; j++) {
+void matrixCalculation(int matrixA[ROWS][ROWS], int matrixW[ROWS][COLS], int resultMatrix[ROWS][COLS]) {
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
             resultMatrix[i][j] = 0;
-            for (int k = 0; k < MATRIX_SIZE; k++) {
+            for (int k = 0; k < COLS; k++) {
                 resultMatrix[i][j] += matrixA[i][k] * matrixW[k][j]; //A * W
             }
         }
@@ -73,58 +73,59 @@ int main(int argc, char *argv[]) {
     
     clock_gettime(CLOCK_MONOTONIC, &start);
 
-    int A[MATRIX_SIZE][MATRIX_SIZE];
-    int W[MATRIX_SIZE][MATRIX_SIZE];
-    int result[MATRIX_SIZE][MATRIX_SIZE];
+    int A[ROWS][COLS];
+    int W[ROWS][COLS];
+    int result[ROWS][COLS];
 
-    if (readMatrixFile(argv[1], MATRIX_SIZE, MATRIX_SIZE, A) == 1)
+    if (readMatrixFile(argv[1], A) == 1)
         return 1; 
-    if (readMatrixFile(argv[2], MATRIX_SIZE, MATRIX_SIZE, W) == 1)
+    if (readMatrixFile(argv[2], W) == 1)
         return 1;
      
-    //This array of pipes  
-    int pipes[MATRIX_SIZE][MATRIX_SIZE];
+    //This array of pipes (8 PIPES)
+    int pipes[ROWS][2];
 
-    for (int i = 0; i < MATRIX_SIZE; i++) {
+    for (int i = 0; i < ROWS; i++) {
         if (pipe(pipes[i]) == -1) {
-            perror("Pipe creation failed");
+            fprintf(stderr, "Pipe creation failed\n");
             return 1;
         }
 
         pid_t pid = fork();
-
         if (pid == -1) {
-            perror("Fork failed");
-            return 1;
+            fprintf(stderr, "Fork failed\n");
+            return 2;
         }
+        
         // Child process
         if (pid == 0) { 
-            close(pipes[i][0]); 
-
-            // Matrix  multipication
-            matrixCalculation(A + i, W, result + i);
-            write(pipes[i][1], result[i], sizeof(int) * MATRIX_SIZE);
-            close(pipes[i][1]);
-
+            close(pipes[i][0]); // Close reading end of the pipe
+            matrixCalculation(A, W, result); // Matrix  multipication
+            if (write(pipes[i][1], result[i], sizeof(int) * ROWS) < 0) {
+            	fprintf(stderr, "Error writing to pipe\n");
+            	return 3;
+            }
+            close(pipes[i][1]); // Close write end of the pipe
             exit(0);
         }
     }
    
     // Parent process
-    for (int i = 0; i < MATRIX_SIZE; i++) {
+    for (int i = 0; i < ROWS; i++) {
         close(pipes[i][1]); // Close the write end of the pipe
-
-        // The results from each child
-        read(pipes[i][0], result[i], sizeof(int) * MATRIX_SIZE);
-        close(pipes[i][0]);
-
-        wait(NULL);
+        // Read the results from each child
+        if (read(pipes[i][0], result[i], sizeof(int) * ROWS) < 0) {
+            fprintf(stderr, "Error reading pipe\n");
+            return 4;
+        }
+        close(pipes[i][0]); // Close the read end of the pipe
+        wait(NULL); // Wait for child process to complete
     }
     
     //print results and the execution time
     printf("Result of A*W = [\n");
-    for (int i = 0; i < MATRIX_SIZE; i++) {
-        for (int j = 0; j < MATRIX_SIZE; j++) {
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
             printf("%d ", result[i][j]);
         }
         printf("\n");
@@ -137,4 +138,5 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
 
