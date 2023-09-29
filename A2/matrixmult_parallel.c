@@ -43,7 +43,6 @@ int readMatrixFile(const char *filename, int matrix[ROWS][COLS]){
     return 0;
 }
 
-
 /**
  * This function performs a multiplication (dot product) of two matrices (A*W)
  * Assumption: matrixA and matriW have 8x8 dimensions
@@ -61,16 +60,20 @@ void matrixCalculation(int matrixA[ROWS][COLS], int matrixW[ROWS][COLS], int res
     }
 }
 
-
+/**
+ * This is the main function to compute array multiplication in a parallel fashion using multiple processes. It reads two input matrix files, performs array multiplication in a parallel fashion using multiple processes, and prints the result.
+ * Input parameters: argc (the number of command-line arguments), argv (an array of strings containing the command-line arguments)
+ * Returns: 0 (success) or integer greater than 0 (failure)
+**/
 int main(int argc, char *argv[]) {
     if (argc != 3) {
         fprintf(stderr, "Error - cannot open file\n");
         fprintf(stderr, "Terminating, exit code 1.\n");
         return 1;
     }
+    
     struct timespec start, finish;
     double elapsed;
-    
     clock_gettime(CLOCK_MONOTONIC, &start);
 
     int A[ROWS][COLS];
@@ -113,13 +116,21 @@ int main(int argc, char *argv[]) {
     // Parent process
     for (int i = 0; i < ROWS; i++) {
         close(pipes[i][1]); // Close the write end of the pipe
-        // Read the results from each child
-        if (read(pipes[i][0], result[i], sizeof(int) * ROWS) < 0) {
-            fprintf(stderr, "Error reading pipe\n");
-            return 4;
+        
+        //Wait for a child process to exit and store its process ID and exit status
+        int status;
+        pid_t child_pid = wait(&status);
+        
+        if (WIFEXITED(status) && WEXITSTATUS(status) == 0) { // Child process was successful
+            if (read(pipes[i][0], result[i], sizeof(int) * ROWS) < 0) { // read child->parent pipe
+                fprintf(stderr, "Error reading pipe\n");
+                return 4;
+            }
+        } else { // Child process failed
+            fprintf(stderr, "Child process %d failed\n", child_pid);
+            return 5;
         }
         close(pipes[i][0]); // Close the read end of the pipe
-        wait(NULL); // Wait for child process to complete
     }
     
     //print results and the execution time
@@ -138,5 +149,3 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-
-
