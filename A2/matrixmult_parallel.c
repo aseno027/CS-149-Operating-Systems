@@ -114,23 +114,21 @@ int main(int argc, char *argv[]) {
     }
    
     // Parent process
-    for (int i = 0; i < ROWS; i++) {
-        close(pipes[i][1]); // Close the write end of the pipe
-        
-        //Wait for a child process to exit and store its process ID and exit status
-        int status;
-        pid_t child_pid = wait(&status);
-        
-        if (WIFEXITED(status) && WEXITSTATUS(status) == 0) { // Child process was successful
-            if (read(pipes[i][0], result[i], sizeof(int) * ROWS) < 0) { // read child->parent pipe
+    int status;
+    int pid_finished;
+    while ((pid_finished = wait(&status)) > -1) {
+    	int row_index = pid_finished % ROWS; // Calculate index based on pid_finished
+    	close(pipes[row_index][1]);// Close the write end of one of the pipe
+    	if (WIFEXITED(status) && WEXITSTATUS(status) == 0) { // Child process was successful
+            if (read(pipes[row_index][0], result[row_index], sizeof(int) * ROWS) < 0) { // read child->parent pipe
                 fprintf(stderr, "Error reading pipe\n");
                 return 4;
             }
         } else { // Child process failed
-            fprintf(stderr, "Child process %d failed\n", child_pid);
+            fprintf(stderr, "Child process %d failed\n", pid_finished);
             return 5;
         }
-        close(pipes[i][0]); // Close the read end of the pipe
+        close(pipes[row_index][0]); // Close the read end of one of the pipe
     }
     
     //print results and the execution time
