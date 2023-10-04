@@ -2,7 +2,7 @@
 #include <stdbool.h>
 
 bool IsArrayMult10(int inputVals[], int numVals) {
-   for(int i = 1; i <= numVals; i++) {
+   for(int i = 0; i < numVals; i++) {
       if(inputVals[i] % 10 != 0) {
          return false;
       }
@@ -11,7 +11,7 @@ bool IsArrayMult10(int inputVals[], int numVals) {
 }
 
 bool IsArrayNoMult10(int inputVals[], int numVals) {
-   for(int i = 1; i <= numVals; i++) {
+   for(int i = 0; i < numVals; i++) {
       if(inputVals[i] % 10 == 0) {
          return false;
       }
@@ -21,21 +21,22 @@ bool IsArrayNoMult10(int inputVals[], int numVals) {
 
 int main(void) {
 
+   int numVals;
+   scanf("%d", &numVals);
+
    int inputVals[20];
-   scanf("%d", &inputVals[0]);
-   
-   for(int i = 1; i <= inputVals[0]; i++) {
+   for (int i = 0; i < numVals; i++) {
       scanf("%d", &inputVals[i]);
    }
-   
-   if (IsArrayMult10(inputVals, inputVals[0])) {
-      printf("all multiples of 10");
-   } else if (IsArrayNoMult10(inputVals, inputVals[0])) {
-      printf("no multiples of 10");
+
+   if (IsArrayMult10(inputVals, numVals)) {
+      printf("all multiples of 10\n");
+   } else if (IsArrayNoMult10(inputVals, numVals)) {
+      printf("no multiples of 10\n");
    } else {
-      printf("mixed values");
+      printf("mixed values\n");
    }
-   printf("\n");
    
    return 0;
 }
+
