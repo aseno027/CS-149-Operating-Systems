@@ -71,37 +71,47 @@ int main(int argc, char *argv[]) {
             fprintf(stderr, "execvp failed\n");
             return 1;
             
-        } else { // Parent process
-            
-            // Convert pid (Integer) to a String
-            char pid_str[32];
-            sprintf(pid_str, "%d", pid);
-            
-            // Create output and error file names using the PID
-            char out_filename[64];
-            char err_filename[64];
-            strcpy(out_filename, pid_str);
-            strcpy(err_filename, pid_str);
-            strcat(out_filename, ".out");
-            strcat(err_filename, ".err");
-            
-            // Open output and error files
-            int out_fd = open(out_filename, O_RDWR | O_CREAT | O_APPEND, 0777);
-            int err_fd = open(err_filename, O_RDWR | O_CREAT | O_APPEND, 0777);
-        
-            // Redirect stdout and stderr to the output and error files
-            dup2(out_fd, 1);
-            dup2(err_fd, 2);
-            
-            // Close the files we don't need
-            close(out_fd);
-            close(err_fd);
-            
-            
-            
         }
-                
     }
     
+    // Parent process
+    int status;
+    int pid;
+    
+    while ((pid = wait(&status)) > 0){
+        // Convert pid (Integer) to a String
+	char pid_str[32];
+	sprintf(pid_str, "%d", pid);
+		    
+	// Create output and error file names using the PID
+	char out_filename[64];
+	char err_filename[64];
+	strcpy(out_filename, pid_str);
+	strcpy(err_filename, pid_str);
+	strcat(out_filename, ".out");
+	strcat(err_filename, ".err");
+		    
+	// Open output and error files
+	int out_fd = open(out_filename, O_RDWR | O_CREAT | O_APPEND, 0777);
+	int err_fd = open(err_filename, O_RDWR | O_CREAT | O_APPEND, 0777);
+		
+	// Redirect stdout and stderr to the output and error files
+	dup2(out_fd, 1);
+	dup2(err_fd, 2);
+		    
+	// Close the files we don't need
+	close(out_fd);
+	close(err_fd);
+    
+        if (WIFEXITED(status)) {
+            printf("Finished child %d pid of parent %d\n", pid, getpid());
+            fflush(stdout);
+	    printf("Exited with exitcode = %d\n", WEXITSTATUS(status));
+	    fflush(stdout);
+	} else if (WIFSIGNALED(status)) {
+       	    fprintf(stderr, "Killed with signal %d\n", WTERMSIG(status));
+       	}
+    }
+       
     return 0;
 }
