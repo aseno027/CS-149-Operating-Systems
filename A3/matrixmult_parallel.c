@@ -71,7 +71,9 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Terminating, exit code 1.\n");
         return 1;
     }
-
+	
+    // sleep(100); // Used for testting only
+    
     // Initialize matrices for A, W, and the result
     int A[ROWS][COLS] = {0};
     int W[ROWS][COLS] = {0};

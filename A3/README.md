@@ -1,4 +1,4 @@
-Assignment 3 FA23
+#Assignment 3 FA23
 
 * Description: In this assignment, we developed a program named matrixmult_multiw that executes multiple matrix multiplications in parallel. This program reads a single A matrix and any number of additional W matrices as command-line arguments. Each pair of A and Wi matrices will be processed in parallel by spawning child processes that execute the matrixmult_parallel program. The results of these matrix multiplications, along with diagnostic messages, will be written to output and error files.
 * Author names: Abel Seno & Amirali Marsahifar
@@ -6,11 +6,11 @@ Assignment 3 FA23
 * Last modified date: 10/11/2023
 * Creation date: 10/7/2023
 
-Code:
+**Code:**
 
 * To compile the program: gcc -o matrixmult_multiw matrixmult_multiw.c -Wall -Werror
 
-Test Cases:
+**Test Cases:**
 
 * Test cases are located in the A3/test directory.
 * To run them, use the following command format: 
@@ -19,7 +19,7 @@ Test Cases:
 Test Case:
 Input: ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
 
-Example Output:
+**Example Output:**
 
 	$ ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
 
@@ -134,5 +134,18 @@ Example Output:
 	Exited with exitcode = 0
 
 	$ cat 7257.err
+	
+	$ cat 2887.err
+	Killed with signal 15
 
-Average Runtime (We ran the program 3 times using the time command): 0.0423 seconds
+**Additional Information:**
+
+To test for the last two lines of the Example Output, we intentionally introduced a sleep(100) command in the matrixmult_parallel.c program. This sleep command is used to simulate a situation where the matrix multiplication process takes a long time to complete. By doing this, we can demonstrate how to handle situations where a matrix multiplication process needs to be terminated manually.
+
+Inside the matrixmult_parallel.c program, locate the point in your code where the matrix multiplication computation occurs. Insert the sleep(100) command at this location, instructing the program to pause execution for 100 seconds, simulating a time-consuming operation. Recompile the matrixmult_parallel.c program after making this modification.
+
+Run the matrixmult_multiw.c program as you normally would, providing the appropriate input matrices as command-line arguments. When you observe that the matrix multiplication process initiated by matrixmult_parallel.c is taking a long time to complete, open another terminal window. In the new terminal window, use the "killall matrixmult_parallel" command. This command will terminate all running instances of the matrixmult_parallel program. If you have multiple instances running due to matrix multiplication tasks, this command will terminate all of them.
+
+As a result of forcefully terminating the matrixmult_parallel process, you will receive a message stating "Killed with signal 15" in a specific PID.err file. Please note that the sleep(100) command was added for testing and demonstration purposes only. In practice, the matrix multiplication processes should ideally complete in a reasonable time frame, and manual termination should be unnecessary.
+
+**Average Runtime (We ran the program 3 times using the time command):** 0.0423 seconds

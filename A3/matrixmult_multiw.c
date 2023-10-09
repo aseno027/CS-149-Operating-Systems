@@ -5,7 +5,11 @@
 #include <fcntl.h>
 #include <string.h>
 
-
+/**
+ * This is the main function that executes multiple matrix multiplications in parallel. It reads all matrices for all executions from stdin on one line of input.
+ * Input parameters: argc (the number of command-line arguments), argv (an array of strings containing the command-line arguments)
+ * Returns: 0 (success) or integer greater than 0 (failure)
+**/
 int main(int argc, char *argv[]) {
 
     // Check the number of arguments
@@ -74,7 +78,6 @@ int main(int argc, char *argv[]) {
     // Parent process
     int status;
     int pid;
-
     while ((pid = wait(&status)) > 0) {
         // Convert pid (Integer) to a String
         char pid_str[32];
