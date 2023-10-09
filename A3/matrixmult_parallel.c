@@ -87,34 +87,6 @@ int main(int argc, char *argv[]) {
     if (readMatrixFile(argv[2], W) == 1)
         return 1;
 
-    // Print matrix A
-    printf("%s = [\n", argv[1]);
-    fflush(stdout);
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
-            printf("%d ", A[i][j]);
-            fflush(stdout);
-        }
-        printf("\n");
-        fflush(stdout);
-    }
-    printf("]\n");
-    fflush(stdout);
-
-    // Print matrix W
-    printf("%s = [\n", argv[2]);
-    fflush(stdout);
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
-            printf("%d ", W[i][j]);
-            fflush(stdout);
-        }
-        printf("\n");
-        fflush(stdout);
-    }
-    printf("]\n");
-    fflush(stdout);
-
     // Create a pipe for communication between parent and child processes
     int fd[2];
 
@@ -205,6 +177,36 @@ int main(int argc, char *argv[]) {
 
     // Close reading end of pipe
     close(fd[0]);
+
+    //PRINT ALL THE MATRIX TO STDOUT:
+    
+    // Print matrix A
+    printf("%s = [\n", argv[1]);
+    fflush(stdout);
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            printf("%d ", A[i][j]);
+            fflush(stdout);
+        }
+        printf("\n");
+        fflush(stdout);
+    }
+    printf("]\n");
+    fflush(stdout);
+
+    // Print matrix W
+    printf("%s = [\n", argv[2]);
+    fflush(stdout);
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            printf("%d ", W[i][j]);
+            fflush(stdout);
+        }
+        printf("\n");
+        fflush(stdout);
+    }
+    printf("]\n");
+    fflush(stdout);
 
     // Print the result matrix
     printf("Result of %s*%s = [\n", argv[1], argv[2]);

@@ -1,4 +1,4 @@
-#Assignment 3 FA23
+**Assignment 3 FA23**
 
 * Description: In this assignment, we developed a program named matrixmult_multiw that executes multiple matrix multiplications in parallel. This program reads a single A matrix and any number of additional W matrices as command-line arguments. Each pair of A and Wi matrices will be processed in parallel by spawning child processes that execute the matrixmult_parallel program. The results of these matrix multiplications, along with diagnostic messages, will be written to output and error files.
 * Author names: Abel Seno & Amirali Marsahifar
@@ -16,8 +16,9 @@
 * To run them, use the following command format: 
 	./matrixmult_multiw test/[TestFileNameA] test/[TestFileNameW1] test/[TestFileNameW2] ... test/[TestFileNameWn]
 
-Test Case:
-Input: ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+**Test Case:**
+
+**Input:** ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
 
 **Example Output:**
 
