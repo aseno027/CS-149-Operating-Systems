@@ -8,7 +8,11 @@
 
 **Code:**
 
-* To compile the program: gcc -o matrixmult_multiw matrixmult_multiw.c -Wall -Werror
+* **Important:** Compile the program "matrixmult_parallel.c" before compiling matrixmult_multiw.c to create "./matrixmult_parallel" which is used in matrixmult_multiw.c
+
+* Compile this program first: gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+	
+* Then compile the program: gcc -o matrixmult_multiw matrixmult_multiw.c -Wall -Werror
 
 **Test Cases:**
 
