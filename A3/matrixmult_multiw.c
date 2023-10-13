@@ -13,8 +13,9 @@
 int main(int argc, char *argv[]) {
 
     // Check the number of arguments
-    if (argc < 3) {
-        fprintf(stderr, "Usage: %s A_matrix W_matrix1 W_matrix2 ... W_matrixN\n", argv[0]);
+    if(argc < 3){ // Check for 2 files
+        fprintf(stderr, "Error - expecting at least 2 files as input.\n");
+        fprintf(stderr, "Terminating, exit code 1.\n");
         return 1;
     }
 
@@ -79,6 +80,8 @@ int main(int argc, char *argv[]) {
     int status;
     int pid;
     while ((pid = wait(&status)) > 0) {
+    
+    	// Open the child out and err files for parent:
         // Convert pid (Integer) to a String
         char pid_str[32];
         sprintf(pid_str, "%d", pid);
@@ -102,13 +105,14 @@ int main(int argc, char *argv[]) {
         // Close the files we don't need
         close(out_fd);
         close(err_fd);
-
+        
+        // Check if the child process terminated normally
         if (WIFEXITED(status)) {
             printf("Finished child %d pid of parent %d\n", pid, getpid());
             fflush(stdout);
             printf("Exited with exitcode = %d\n", WEXITSTATUS(status));
             fflush(stdout);
-        } else if (WIFSIGNALED(status)) {
+        } else if (WIFSIGNALED(status)) { // Child process was terminated by a signal
             fprintf(stderr, "Killed with signal %d\n", WTERMSIG(status));
         }
     }
