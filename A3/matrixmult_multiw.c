@@ -39,16 +39,16 @@ int main(int argc, char *argv[]) {
             sprintf(pid_str, "%d", getpid());
 
             // Create output and error file names using the PID
-            char out_filename[64];
-            char err_filename[64];
-            strcpy(out_filename, pid_str);
-            strcpy(err_filename, pid_str);
-            strcat(out_filename, ".out");
-            strcat(err_filename, ".err");
+            char out_file[64];
+            char err_file[64];
+            strcpy(out_file, pid_str);
+            strcpy(err_file, pid_str);
+            strcat(out_file, ".out");
+            strcat(err_file, ".err");
 
             // Open output and error files
-            int out_fd = open(out_filename, O_RDWR | O_CREAT | O_APPEND, 0777);
-            int err_fd = open(err_filename, O_RDWR | O_CREAT | O_APPEND, 0777);
+            int out_fd = open(out_file, O_RDWR | O_CREAT | O_APPEND, 0777);
+            int err_fd = open(err_file, O_RDWR | O_CREAT | O_APPEND, 0777);
 
             // Redirect stdout and stderr to the output and error files
             dup2(out_fd, 1);
@@ -78,25 +78,25 @@ int main(int argc, char *argv[]) {
 
     // Parent process
     int status;
-    int pid;
-    while ((pid = wait(&status)) > 0) {
+    int child_pid;
+    while ((child_pid = wait(&status)) > 0) {
     
     	// Open the child out and err files for parent:
         // Convert pid (Integer) to a String
         char pid_str[32];
-        sprintf(pid_str, "%d", pid);
+        sprintf(pid_str, "%d", child_pid);
 
         // Create output and error file names using the PID
-        char out_filename[64];
-        char err_filename[64];
-        strcpy(out_filename, pid_str);
-        strcpy(err_filename, pid_str);
-        strcat(out_filename, ".out");
-        strcat(err_filename, ".err");
+        char out_file[64];
+        char err_file[64];
+        strcpy(out_file, pid_str);
+        strcpy(err_file, pid_str);
+        strcat(out_file, ".out");
+        strcat(err_file, ".err");
 
         // Open output and error files
-        int out_fd = open(out_filename, O_RDWR | O_CREAT | O_APPEND, 0777);
-        int err_fd = open(err_filename, O_RDWR | O_CREAT | O_APPEND, 0777);
+        int out_fd = open(out_file, O_RDWR | O_CREAT | O_APPEND, 0777);
+        int err_fd = open(err_file, O_RDWR | O_CREAT | O_APPEND, 0777);
 
         // Redirect stdout and stderr to the output and error files
         dup2(out_fd, 1);
@@ -108,7 +108,7 @@ int main(int argc, char *argv[]) {
         
         // Check if the child process terminated normally
         if (WIFEXITED(status)) {
-            printf("Finished child %d pid of parent %d\n", pid, getpid());
+            printf("Finished child %d pid of parent %d\n", child_pid, getpid());
             fflush(stdout);
             printf("Exited with exitcode = %d\n", WEXITSTATUS(status));
             fflush(stdout);

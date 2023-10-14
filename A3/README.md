@@ -24,6 +24,8 @@
 
 **Input:** ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
 
+**Then:** There will be six new files create which are three somePID.out and three somePID.err files.
+
 **Example Output:**
 
 	$ ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
