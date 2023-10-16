@@ -1,3 +1,11 @@
+/* 
+ * Authors: Abel Seno and Amirali Marashifar
+ * Date: 10/15/2023
+ * Description: Executes multiple matrix multiplications in parallel. This program reads a single A matrix and any
+ *		number of additional W matrices as command-line arguments. Each pair of A and Wi matrices will be
+ *		processed in parallel by spawning child processes that execute the matrixmult_parallel program.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

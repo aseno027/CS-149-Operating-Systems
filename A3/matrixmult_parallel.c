@@ -1,3 +1,10 @@
+/* 
+ * Authors: Abel Seno and Amirali Marashifar
+ * Date: 10/15/2023
+ * Description: Extended the matrixmult.c program from Assignment 1 to perform array multiplication in parallel
+ *		using multiple processes.
+ */
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
