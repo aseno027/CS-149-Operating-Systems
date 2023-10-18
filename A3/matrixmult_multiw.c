@@ -1,10 +1,10 @@
-/* 
- * Authors: Abel Seno and Amirali Marashifar
- * Date: 10/15/2023
- * Description: Executes multiple matrix multiplications in parallel. This program reads a single A matrix and any
- *		number of additional W matrices as command-line arguments. Each pair of A and Wi matrices will be
- *		processed in parallel by spawning child processes that execute the matrixmult_parallel program.
- */
+/**
+ * Description: This C program executes multiple matrix multiplications in parallel. It reads matrices for execution from command-line arguments and creates child processes for each matrix multiplication task. Each child process redirects its output to separate output and error files. The parent process waits for all child processes to complete and reports their status.
+ * Author names: Abel Seno & Amirali Marsahifar
+ * Author emails: abel.seno@sjsu.edu & amirali.marashifar@sjsu.edu
+ * Last modified date: 10/18/2023
+ * Creation date: 10/7/2023 
+ **/
 
 #include <stdio.h>
 #include <stdlib.h>

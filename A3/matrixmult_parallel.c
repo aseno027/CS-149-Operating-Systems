@@ -1,9 +1,10 @@
-/* 
- * Authors: Abel Seno and Amirali Marashifar
- * Date: 10/15/2023
- * Description: Extended the matrixmult.c program from Assignment 1 to perform array multiplication in parallel
- *		using multiple processes.
- */
+/**
+ * Description: This C program performs matrix multiplication in a parallel fashion using multiple processes. It reads two input matrix files, performs array multiplication, and prints the result. The program utilizes child processes for matrix calculations and a pipe for communication between the parent and child processes.
+ * Author names: Abel Seno & Amirali Marsahifar
+ * Author emails: abel.seno@sjsu.edu & amirali.marashifar@sjsu.edu
+ * Last modified date: 10/18/2023
+ * Creation date: 10/7/2023 
+ **/
 
 #include <string.h>
 #include <stdio.h>
