@@ -52,3 +52,4 @@
 	cat 14448.err
 
 **Average Runtime (We ran the program 3 times using the time command):** 11.557 seconds
+**Using valgrind: Use valgrind to detect memory leaks and no memory leaks were detected**
