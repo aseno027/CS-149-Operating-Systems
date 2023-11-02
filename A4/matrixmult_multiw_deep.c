@@ -157,6 +157,7 @@ int main(int argc, char *argv[]) {
             addMatrix(rSum, Bi);
         } else if (WIFSIGNALED(status)) { // Child process was terminated by a signal
             fprintf(stderr, "Killed with signal %d\n", WTERMSIG(status));
+            return 1;
         }
     }
     close(fd1[1]);
@@ -187,10 +188,17 @@ int main(int argc, char *argv[]) {
 
     while (fgets(line, sizeof(line), stdin) != NULL) {
         fflush(stdin);
+        // Input empty line
+        
         // Remove newline character from the input
-        size_t len = strlen(line);
-        if (len > 0 && line[len - 1] == '\n') {
-            line[len - 1] = '\0'; // Remove the newline character
+        char* newline = strchr(line, '\n');
+        if (newline) {
+            *newline = '\0';
+        }
+        
+        // Skip processing if the line is empty
+        if (strlen(line) == 0) {
+            continue;
         }
 
         // Parse the line and extract W filenames
@@ -295,6 +303,7 @@ int main(int argc, char *argv[]) {
                 addMatrix(rSum, Bi);
             } else if (WIFSIGNALED(status)) { // Child process was terminated by a signal
                 fprintf(stderr, "Killed with signal %d\n", WTERMSIG(status));
+                return 1;
             }
         }
         close(fd2[1]);

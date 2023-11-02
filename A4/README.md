@@ -18,7 +18,8 @@
 * To run them, use the following command format: 
 	./matrixmult_multiw_deep test/[TestFileNameA] test/[TestFileNameW1] test/[TestFileNameW2] ... test/[TestFileNameWn]
 
-**Input:** 
+**Input:**
+
 	./matrixmult_multiw_deep test/A1.txt test/W1.txt test/W2.txt test/W3.txt <- Press Enter
 	test/W4.txt test/W5.txt test/W6.txt test/W7.txt <- Press Enter
 	test/W8.txt <- Press Enter
