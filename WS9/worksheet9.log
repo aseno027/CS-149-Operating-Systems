@@ -1,0 +1,1000 @@
+  216  ./matrixmult test/A1.txt test/W1.txt test/B2.txt > /dev/null
+  217  ./matrixmult > /dev/null
+  218  cd ~
+  219  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  220  cd Desktop/cs149/A1/
+  221  git add .
+  222  git commit -m "assignment 1" -a
+  223  git push -u origin master
+  224  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  225  git clone https://abelseno30@bitbucket.org/abelseno/cs149.
+  226  cd `
+  227  a
+  228  date
+  229  pwd
+  230  cd Desktop/
+  231  ls -latr  ; mkdir WS2 ; cd WS2
+  232  ls -latr
+  233  echo $?
+  234  man ps
+  235  ps aux
+  236  top
+  237  history > worksheet2.log
+  238  head worksheet2.log
+  239  tail worksheet2.log
+  240  cat worksheet2.log
+  241  cd `
+  242  q
+  243  cd~
+  244  quit
+  245  cd `
+  246  cd ~
+  247  cd Desktop/cs149/WS2
+  248  gcc 2_25.c -o 2_25
+  249  ./2_25
+  250  gcc 2_29.c -o 2_29
+  251  gcc 2_29.c -lm 2_29
+  252  ./-lm 2_29
+  253  -lm 2_29
+  254  gcc 2_29.c -o 2_29 -lm
+  255  ./2_29
+  256  gcc 2_32.c -o 2_32
+  257  ./2_32
+  258  gcc 2_34.c -o 2_34
+  259  ./2_34
+  260  gcc 3_22.c -o 3_22
+  261  ./3_22
+  262  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  263  git add .
+  264  git commit -m "finished worksheet 2" -a
+  265  git branch
+  266  git push -u origin master
+  267  cd ~
+  268  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  269  cd Desktop/cs149/WS2
+  270  git add .
+  271  git commit -m "finished worksheet 2" -a
+  272  git push -u origin master
+  273  git add worksheet2.log
+  274  -f
+  275  git add worksheet2.log
+  276  git config advice.addIgnoredFile false
+  277  git add worksheet2.log
+  278  q
+  279  cd Desktop/cs149/A1/
+  280  gcc matricmult.c -o matrixmult
+  281  gcc matrixmult.c -o matrixmult
+  282  ./matrixmult test/A1.txt test/W1.txt test/B2.txt
+  283  gcc matrixmult.c -o matrixmult
+  284  ./matrixmult test/A1.txt test/W1.txt test/B2.txt
+  285  ./matrixmult test/A2.txt test/W2.txt test/B2.txt
+  286  ./matrixmult test/A3.txt test/W3.txt test/B3.txt
+  287  ./matrixmult test/A3.txt test/W3.txt test/B4.txt
+  288  ./matrixmult
+  289  ./matrixmult test/A3.txt test/W3.txt test/B4.txt > /dev/null
+  290  gcc matrixmult.c -o matrixmult
+  291  ./matrixmult test/A3.txt test/W3.txt test/B4.txt > /dev/null
+  292  ./matrixmult test/A3.txt test/W3.txt test/B4.txt
+  293  gcc matrixmult.c -o matrixmult
+  294  ./matrixmult test/A3.txt test/W3.txt test/B4.txt
+  295  ./matrixmult test/A3.txt test/W3.txt test/B3.txt
+  296  gcc matrixmult.c -o matrixmult
+  297  ./matrixmult test/A1.txt test/W1.txt test/B1.txt
+  298  ./matrixmult test/A2.txt test/W2.txt test/B2.txt
+  299  ./matrixmult test/A3.txt test/W3.txt test/B3.txt
+  300  ./matrixmult
+  301  ./matrixmult test/A3.txt test/W3.txt test/B4.txt
+  302  ./matrixmult test/A3.txt test/W3.txt test/B4.txt 2> /dev/null
+  303  ./matrixmult test/A3.txt test/W3.txt test/B4.txt > /dev/null
+  304  gcc matrixmult.c -o matrixmult -Wall -Werror
+  305  ./matrixmult test/A3.txt test/W3.txt test/B3.txt
+  306  cd ~
+  307  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  308  cd Desktop/cs149/A1/
+  309  git add .
+  310  git commit -m "added comments and completed README.md file" -a
+  311  git push -u origin master
+  312  cd ~
+  313  git clone https://abelseno30@bitbucket.org/cs-149-fall2023/a1.git
+  314  cd Desktop/cs149/A1/
+  315  git add .
+  316  git commit -m "added comments, added to README.md, added A1/test subdirectory" -a
+  317  cd ~
+  318  git pul;
+  319  git pull
+  320  cd Desktop/cs149/A1/
+  321  git add .
+  322  git commit -m "added comments, added to README.md, added A1/test subdirectory" -a
+  323  cd ~
+  324  git pull https://abelseno30@bitbucket.org/cs-149-fall2023/a1.git
+  325  git commit -m "added comments, added to README.md, added A1/test subdirectory" -a
+  326  cd a1/
+  327  git commit -m "added comments, added to README.md, added A1/test subdirectory" -a
+  328  git push -u origin master
+  329  git pull https://abelseno30@bitbucket.org/cs-149-fall2023/a1.git
+  330  cd~
+  331  a
+  332  cd ~
+  333  git pull https://abelseno30@bitbucket.org/cs-149-fall2023/a1.git
+  334  cd a1/test/
+  335  git add .
+  336  git commit -m "added comments, added to README.md, added A1/test subdirectory" -a
+  337  git push -u origin master
+  338  cd ~
+  339  git clone -b master https://abelseno30@bitbucket.org/abelseno/cs149.git cs149_abelseno
+  340  cd cs149_abelseno/
+  341  gcc -o matrixmult matrixmult.c -Wall -Werror
+  342  cd A1/
+  343  gcc -o matrixmult matrixmult.c -Wall -Werror
+  344  ./matrixmult  test/A1.txt test/W1.txt  test/B1.txt
+  345  ./matrixmult  test/A2.txt test/W2.txt  test/B2.txt
+  346  ./matrixmult  test/A3.txt test/W3.txt  test/B3.txt
+  347  cd ~
+  348  cd cs149_abelseno/WS2
+  349  ./2_25
+  350  cd ~
+  351  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  352  cd cs149
+  353  cd WS4
+  354  gcc 5_22.c -o 5_22
+  355  ./5_22
+  356  gcc 6_20.c -o 6_20
+  357  ./6_20
+  358  gcc 6_30.c -o 6_30
+  359  ./6_30
+  360  cd ~
+  361  wget http://www.apuebook.com/src.3e.tar.gz
+  362  gunzip src.3e.tar.gz
+  363  tar xvf src.3e.tar
+  364  cd apue.3e
+  365  cd proc
+  366  make all
+  367  ./fork1
+  368  ./fork2
+  369  pwd
+  370  pstree
+  371  ps -a -f -x
+  372  top
+  373  man kill
+  374  echo $?
+  375  echo $$
+  376  history > worksheet4.log
+  377  tail worksheet4.log
+  378  cd ~
+  379  cd cs149/WS4
+  380  add .
+  381  git add .
+  382  git commit -m "added worksheet 4" -a
+  383  git -f add worksheet4.log
+  384  git add worksheet4.log -f
+  385  git commit -m "added worksheet4.log" -a
+  386  git push -u origin master
+  387  cd ~
+  388  cd cs149_amirali_marashifar/
+  389  cd WS3
+  390  gcc 4_14.c -o 4_14
+  391  ./4_14
+  392  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+  393  cd cs149/A2
+  394  gcc matrixmult_parallel.c -o mp
+  395  ./mp A1.txt W1.txt
+  396  5 3 0 0 0 5
+  397  1 1 0 0 0 1
+  398  1 0 0 0 0 1
+  399  ./mp A.txt W.txt
+  400  gcc matrixmult_parallel.c -o mp
+  401  ./mp A.txt W.txt
+  402  gcc matrixmult_parallel.c -o mp
+  403  ./mp A.txt W.txt
+  404  gcc matrixmult_parallel.c -o mp
+  405  ./mp A.txt W.txt
+  406  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  407  ./matrixmult_parallel A.txt W.txt
+  408  ./matrixmult_parallel test/A.txt test/W.txt
+  409  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  410  ./matrixmult_parallel test/A.txt test/W.txt
+  411  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  412  ./matrixmult_parallel test/A.txt test/W.txt
+  413  git add .
+  414  commit -m "computed runtime and added README.md file" -a
+  415  git commit -m "computed runtime and added README.md file" -a
+  416  git push -u origin master
+  417  git add .
+  418  commit -m "computed runtime and added README.md file" -a
+  419  git commit -m "computed runtime and added README.md file" -a
+  420  git push -u origin master
+  421  gcc matrixmult_multiw.c -o matrixmult_multiw
+  422  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  423  gcc matrixmult_multiw.c -o matrixmult_multiw
+  424  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  425  gcc matrixmult_parallel.c -o matrixmult_parallel
+  426  gcc matrixmult_multiw.c -o matrixmult_multiw
+  427  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  428  ./matrixmult_parallel A1.txt W1.txt
+  429  gcc matrixmult_multiw.c -o matrixmult_multiw
+  430  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  431  gcc matrixmult_multiw.c -o matrixmult_multiw
+  432  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  433  gcc matrixmult_multiw.c -o matrixmult_multiw
+  434  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  435  gcc matrixmult_multiw.c -o matrixmult_multiw
+  436  cd cs149/A3
+  437  gcc matrixmult_parallel.c -o matrixmult_parallel
+  438  gcc matrixmult_multiw.c -o matrixmult_multiw
+  439  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  440  gcc matrixmult_multiw.c -o matrixmult_multiw
+  441  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  442  gcc matrixmult_multiw.c -o matrixmult_multiw
+  443  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  444  gcc matrixmult_multiw.c -o matrixmult_multiw
+  445  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  446  gcc matrixmult_parallel.c -o matrixmult_parallel
+  447  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  448  ./matrixmult_parallel A1.txt W1.txt
+  449  gcc matrixmult_parallel.c -o matrixmult_parallel
+  450  gcc matrixmult_multiw.c -o matrixmult_multiw
+  451  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  452  gcc matrixmult_parallel.c -o matrixmult_parallel
+  453  gcc matrixmult_multiw.c -o matrixmult_multiw
+  454  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  455  gcc matrixmult_parallel.c -o matrixmult_parallel
+  456  gcc matrixmult_multiw.c -o matrixmult_multiw
+  457  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  458  [200~gcc matrixmult_multiw.c -o matrixmult_multiw~
+  459  gcc matrixmult_multiw.c -o matrixmult_multiw
+  460  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  461  gcc matrixmult_parallel.c -o matrixmult_parallel
+  462  gcc matrixmult_multiw.c -o matrixmult_multiw
+  463  gcc matrixmult_parallel.c -o matrixmult_parallel
+  464  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  465  gcc matrixmult_multiw.c -o matrixmult_multiw
+  466  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  467  gcc matrixmult_multiw.c -o matrixmult_multiw
+  468  gcc matrixmult_parallel.c -o matrixmult_parallel
+  469  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  470  cat 3973,out
+  471  cat 3973.out
+  472  cat 3973.err
+  473  cat 3974.out
+  474  cat 3974.err
+  475  cat 3975.out
+  476  cat 3975.err
+  477  gcc matrixmult_multiw.c -o matrixmult_multiw
+  478  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  479  gcc matrixmult_multiw.c -o matrixmult_multiw
+  480  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  481  gcc matrixmult_multiw.c -o matrixmult_multiw
+  482  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  483  gcc matrixmult_multiw.c -o matrixmult_multiw
+  484  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  485  gcc matrixmult_multiw.c -o matrixmult_multiw
+  486  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  487  gcc matrixmult_multiw.c -o matrixmult_multiw
+  488  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  489  gcc matrixmult_multiw.c -o matrixmult_multiw
+  490  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  491  cat 4430.out
+  492  gcc matrixmult_multiw.c -o matrixmult_multiw
+  493  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  494  cat 4491.ot
+  495  cat 4491.out
+  496  gcc matrixmult_multiw.c -o matrixmult_multiw
+  497  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  498  cat 4515.out
+  499  gcc matrixmult_multiw.c -o matrixmult_multiw
+  500  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  501  cat 4561.out
+  502  cat 4571.out
+  503  git add .
+  504  git commit -m "added assignment 3" -a
+  505  git push -u origin master
+  506  cd ~
+  507  git clone https://bitbucket.org/abelseno/cs149.git
+  508  git clone -b master https://bitbucket.org/abelseno/cs149.git cs149_amirali_marashifar
+  509  cd cs149_amirali_marashifar/A3
+  510  git add .
+  511  git commit -m "added assignment 3" -a
+  512  git push -u origin master
+  513  gcc matrixmult_multiw.c -o matrixmult_multiw
+  514  cd cs149/A3
+  515  gcc matrixmult_multiw.c -o matrixmult_multiw
+  516  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  517  gcc matrixmult_multiw.c -o matrixmult_multiw
+  518  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  519  gcc matrixmult_multiw.c -o matrixmult_multiw
+  520  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  521  gcc matrixmult_multiw.c -o matrixmult_multiw
+  522  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  523  cat 2801.err
+  524  gcc matrixmult_multiw.c -o matrixmult_multiw
+  525  gcc matrixmult_parallel.c -o matrixmult_parallel
+  526  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  527  gcc matrixmult_parallel.c -o matrixmult_parallel
+  528  gcc matrixmult_multiw.c -o matrixmult_multiw
+  529  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  530  gcc matrixmult_parallel.c -o matrixmult_parallel
+  531  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  532  gcc matrixmult_parallel.c -o matrixmult_parallel
+  533  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  534  gcc matrixmult_parallel.c -o matrixmult_parallel
+  535  #include <string.h>
+  536  #include <stdio.h>
+  537  #include <stdlib.h>
+  538  #include <unistd.h>
+  539  #include <sys/wait.h>
+  540  #include <time.h>
+  541  #define ROWS 8
+  542  #define COLS 8
+  543  /**
+  544  **/
+  545  int readMatrixFile(const char *filename, int matrix[ROWS][COLS]){
+  546  }
+  547  /**
+  548  void matrixCalculation(int matrixA[COLS], int matrixW[COLS][COLS], int resultRow[COLS]) {
+  549  }
+  550  /**
+  551  **/
+  552  int main(int argc, char *argv[]) {
+  553  	    
+  554  	    // Write the result row dot product
+  555  }
+  556  q
+  557  gcc matrixmult_parallel.c -o matrixmult_parallel
+  558  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  559  gcc matrixmult_parallel.c -o matrixmult_parallel
+  560  ./matrixmult_parallel A1.txt W1.txt
+  561  gcc matrixmult_parallel.c -o matrixmult_parallel
+  562  ./matrixmult_parallel A1.txt W1.txt
+  563  gcc matrixmult_parallel.c -o matrixmult_parallel
+  564  ./matrixmult_parallel A1.txt W1.txt
+  565  gcc matrixmult_multiw.c -o matrixmult_multiw
+  566  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  567  cat 5000.out
+  568  cat 5000,err
+  569  gcc matrixmult_parallel.c -o matrixmult_parallel
+  570  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  571  gcc matrixmult_parallel.c -o matrixmult_parallel
+  572  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  573  cat 4045.out
+  574  gcc matrixmult_parallel.c -o matrixmult_parallel
+  575  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  576  cat 4092.out
+  577  gcc matrixmult_parallel.c -o matrixmult_parallel
+  578  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  579  cat 4143.out
+  580  gcc matrixmult_parallel.c -o matrixmult_parallel
+  581  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  582  cat 4200.out
+  583  gcc matrixmult_parallel.c -o matrixmult_parallel
+  584  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  585  ./matrixmult_parallel A1.txt W1.txt
+  586  killall matrixmult_parallel"
+  587  q
+  588  quit
+  589  [200~killall matrixmult_parallel"~killall matrixmult_parallel"
+  590  cd quit
+  591  ./q
+  592  ./quit
+  593  kill -15 2389
+  594  pkill sleep
+  595  ps aux
+  596  cd cs149/A3
+  597  gcc matrixmult_parallel.c -o matrixmult_parallel
+  598  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  599  gcc matrixmult_parallel.c -o matrixmult_parallel
+  600  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  601  gcc matrixmult_parallel.c -o matrixmult_parallel
+  602  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  603  gcc matrixmult_parallel.c -o matrixmult_parallel
+  604  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  605  gcc matrixmult_parallel.c -o matrixmult_parallel
+  606  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  607  gcc matrixmult_parallel.c -o matrixmult_parallel
+  608  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  609  ./matrixmult_parallel A1.txt W1.txt
+  610  gcc matrixmult_parallel.c -o matrixmult_parallel
+  611  ./matrixmult_parallel A1.txt W1.txt
+  612  gcc matrixmult_parallel.c -o matrixmult_parallel
+  613  ./matrixmult_parallel A1.txt W1.txt
+  614  gcc matrixmult_parallel.c -o matrixmult_parallel
+  615  ./matrixmult_parallel A1.txt W1.txt
+  616  gcc matrixmult_parallel.c -o matrixmult_parallel
+  617  ./matrixmult_parallel A1.txt W1.txt
+  618  gcc matrixmult_parallel.c -o matrixmult_parallel
+  619  ./matrixmult_parallel A1.txt W1.txt
+  620  gcc matrixmult_parallel.c -o matrixmult_parallel
+  621  ./matrixmult_parallel A1.txt W1.txt
+  622  gcc matrixmult_parallel.c -o matrixmult_parallel
+  623  ./matrixmult_parallel A1.txt W1.txt
+  624  gcc matrixmult_parallel.c -o matrixmult_parallel
+  625  ./matrixmult_parallel A1.txt W1.txt
+  626  gcc matrixmult_parallel.c -o matrixmult_parallel
+  627  ./matrixmult_parallel A1.txt W1.txt
+  628  gcc matrixmult_parallel.c -o matrixmult_parallel
+  629  ./matrixmult_parallel A1.txt W1.txt
+  630  gcc matrixmult_parallel.c -o matrixmult_parallel
+  631  ./matrixmult_parallel A1.txt W1.txt
+  632  gcc matrixmult_parallel.c -o matrixmult_parallel
+  633  gcc matrixmult_multiw.c -o matrixmult_multiw
+  634  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  635  cat 5023.out
+  636  cat 5023.err
+  637  cat 5024.out
+  638  cat 5024.err
+  639  cat 5025.out
+  640  cat 5025.err
+  641  cat 5026.err
+  642  cat 2389.err
+  643  gcc matrixmult_parallel.c -o matrixmult_parallel
+  644  ./matrixmult_parallel A1.txt W1.txt
+  645  gcc matrixmult_multiw.c -o matrixmult_multiw
+  646  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  647  cat 2389.err
+  648  gcc matrixmult_multiw.c -o matrixmult_multiw
+  649  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  650  gcc matrixmult_multiw.c -o matrixmult_multiw
+  651  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  652  cat 2389.err
+  653  gcc matrixmult_parallel.c -o matrixmult_parallel
+  654  gcc matrixmult_multiw.c -o matrixmult_multiw
+  655  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt B1.txt
+  656  gcc matrixmult_parallel.c -o matrixmult_parallel
+  657  gcc matrixmult_multiw.c -o matrixmult_multiw
+  658  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  659  gcc matrixmult_parallel.c -o matrixmult_parallel
+  660  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  661  git add .
+  662  git commit -m "updated both .c files" -a
+  663  git add .
+  664  git commit -m "updated both .c files" -a
+  665  git push -u origin master
+  666  cd ~
+  667  git clone -b master https://bitbucket.org/abelseno/cs149.git cs149_amirali_marashifar
+  668  cd cs149/A3
+  669  git add .
+  670  git commit -m "updated both .c files" -a
+  671  git push -u origin master
+  672  cd ~
+  673  cd cs149_amirali_marashifar/A3
+  674  git add .
+  675  git commit -m "updated both .c files" -a
+  676  git push -u origin master
+  677  cd ~
+  678  cd cs149/A3
+  679  ./time
+  680  gcc matrixmult_multiw.c -o matrixmult_multiw
+  681  gcc matrixmult_parallel.c -o matrixmult_parallel
+  682  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt B1.txt
+  683  time ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  684  gcc matrixmult_multiw.c -o matrixmult_multiw
+  685  gcc matrixmult_parallel.c -o matrixmult_parallel
+  686  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  687  cat 7241.out
+  688  ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+  689  cat 7255.out
+  690  cat 7255.err
+  691  cat 7256.out
+  692  cat 7256.err
+  693  cat 7257.out
+  694  cat 7257.err
+  695  time ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+  696  gcc -o matrixmult_multiw matrixmult_multiw.c -Wall -Werror
+  697  kill -15 2389
+  698  kill -15 5025
+  699  kill -15 7257
+  700  ps aux
+  701  cat 7429.err
+  702  kill -15 7429
+  703  ps aux
+  704  kill -15 7491
+  705  cat 7491.err
+  706  pkill sleep
+  707  ps aux
+  708  kill 7481
+  709  cat 7481.err
+  710  cat 7481
+  711  cd cs149/A3
+  712  ps aux
+  713  cd cs149_amirali_marashifar/A3
+  714  gcc -o matrixmult_multiw matrixmult_multiw.c -Wall -Werror
+  715  ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+  716  cat 2594
+  717  cat 2594.out
+  718  sleep 100
+  719  cat 2645.err
+  720  cd ~
+  721  cat 2645.err
+  722  sleep 100
+  723  cd cs149_amirali_marashifar/A3
+  724  sleep 100
+  725  ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt sleep 100
+  726  sleep 100 ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+  727  sleep 100
+  728  gcc -o matrixmult_multiw matrixmult_multiw.c -Wall -Werror
+  729  ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+  730  sleep 100
+  731  cd cs149_amirali_marashifar/A3
+  732  gcc matrixmult_parallel.c -o matrixmult_parallel
+  733  gcc -o matrixmult_multiw matrixmult_multiw.c -Wall -Werror
+  734  ./matrixmult_multiw test/A1.txt test/W1.txt
+  735  git add .
+  736  git commit -m "added more" -a
+  737  git push -u origin master
+  738  git clone -b master https://bitbucket.org/abelseno/cs149.git cs149_amirali_marashifar
+  739  cd cs149_amirali_marashifar/A3
+  740  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  741  gcc -o matrixmult_multiw matrixmult_multiw.c -Wall -Werror
+  742  ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+  743  cat 3037.out
+  744  cat 3037
+  745  cat 3037.err
+  746  cat 3038.out
+  747  cat 3038.err
+  748  cat 3039.out
+  749  cat 3039.err
+  750  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  751  gcc -o matrixmult_multiw matrixmult_multiw.c -Wall -Werror
+  752  ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+  753  cat 3096.err
+  754  cat 3097.err
+  755  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  756  gcc -o matrixmult_multiw matrixmult_multiw.c -Wall -Werror
+  757  ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+  758  cat 3150.out
+  759  cat 3150.err
+  760  cat 3151.out
+  761  cat 3151.err
+  762  cat 3152.out
+  763  cat 3152.err
+  764  ps aux
+  765  killall matrixmult_parallel
+  766  gcc -o lseek_example lseek_example.c
+  767  ./lseek_example
+  768  cat end.txt
+  769  cd cs149/A4
+  770  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror)
+  771  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  772  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  773  cd Desktop/A4
+  774  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  775  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  776  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  777  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  778  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  779  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  780  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  781  cd Desktop/A4
+  782  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  783  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  784  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  785  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  786  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  787  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  788  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  789  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  790  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  791  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  792  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  793  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  794  /matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  795  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  796  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  797  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  798  /matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  799  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  800  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  801  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  802  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  803  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  804  cd Desktop/A4
+  805  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  806  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  807  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  808  cd Desktop/A4
+  809  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  810  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  811  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  812  cd Desktop/A4
+  813  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  814  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  815  cd Desktop/A4
+  816  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  817  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  818  cd Desktop/A4
+  819  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  820  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  821  cd Desktop/A4
+  822  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  823  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  824  cd Desktop/A4
+  825  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  826  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  827  cd Desktop/A4
+  828  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  829  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  830  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  831  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  832  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  833  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  834  cd Desktop/A4
+  835  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  836  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  837  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  838  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  839  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  840  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  841  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  842  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  843  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  844  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  845  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  846  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  847  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  848  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  849  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  850  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  851  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  852  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  853  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  854  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  855  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  856  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  857  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  858  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  859  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  860  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  861  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  862  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  863  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  864  gcc -o test test.c -Wall -Werror
+  865  gcc -o t test.c -Wall -Werror
+  866  ./t A1.txt W1.txt W2.txt W3.txt
+  867  A1.txt W1.txt W2.txt W3.txt
+  868  ./t A1.txt W1.txt W2.txt W3.txt
+  869  gcc -o t test.c -Wall -Werror
+  870  ./t A1.txt W1.txt W2.txt W3.txt
+  871  gcc -o t test.c -Wall -Werror
+  872  ./t A1.txt W1.txt W2.txt W3.txt
+  873  gcc -o t test.c -Wall -Werror
+  874  ./t A1.txt W1.txt W2.txt W3.txt
+  875  gcc -o t test.c -Wall -Werror
+  876  ./t A1.txt W1.txt W2.txt W3.txt
+  877  W4.txt W5.txt W6.txt W7.txt
+  878  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  879  ./t A1.txt W1.txt W2.txt W3.txt
+  880  gcc -o t test.c -Wall -Werror
+  881  ./t A1.txt W1.txt W2.txt W3.txt
+  882  cd Desktop/A4
+  883  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  884  gcc -o t test.c -Wall -Werror
+  885  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  886  gcc -o t test.c -Wall -Werror
+  887  ./t A1.txt W1.txt W2.txt W3.txt
+  888  cd Desktop/A4
+  889  gcc -o t test.c -Wall -Werror
+  890  ./t A1.txt W1.txt W2.txt W3.txt
+  891  cd Desktop/A4/
+  892  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  893  gcc -o t test.c -Wall -Werror
+  894  ./t A1.txt W1.txt W2.txt W3.txt
+  895  gcc -o t test.c -Wall -Werror
+  896  ./t A1.txt W1.txt W2.txt W3.txt
+  897  gcc -o t test.c -Wall -Werror
+  898  ./t A1.txt W1.txt W2.txt W3.txt
+  899  gcc -o t test.c -Wall -Werror
+  900  ./t A1.txt W1.txt W2.txt W3.txt
+  901  gcc -o t test.c -Wall -Werror
+  902  ./t A1.txt W1.txt W2.txt W3.txt
+  903  gcc -o t test.c -Wall -Werror
+  904  ./t A1.txt W1.txt W2.txt W3.txt
+  905  gcc -o t test.c -Wall -Werror
+  906  ./t A1.txt W1.txt W2.txt W3.txt
+  907  cd Desktop/a4
+  908  cd Desktop/A4
+  909  gcc -o t test.c -Wall -Werror
+  910  ./t A1.txt W1.txt W2.txt W3.txt
+  911  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  912  gcc -o t test.c -Wall -Werror
+  913  ./t A1.txt W1.txt W2.txt W3.txt
+  914  gcc -o t test.c -Wall -Werror
+  915  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  916  ./t A1.txt W1.txt W2.txt W3.txt
+  917  /t A1.txt W1.txt W2.txt W3.txt
+  918  ./t A1.txt W1.txt W2.txt W3.txt
+  919  gcc -o t test.c -Wall -Werror
+  920  ./t A1.txt W1.txt W2.txt W3.txt
+  921  cd Desktop/A4
+  922  gcc -o t test.c -Wall -Werror
+  923  ./t A1.txt W1.txt W2.txt W3.txt
+  924  gcc -o t test.c -Wall -Werror
+  925  ./t A1.txt W1.txt W2.txt W3.txt
+  926  gcc -o t test.c -Wall -Werror
+  927  ./t A1.txt W1.txt W2.txt W3.txt
+  928  gcc -o t test.c -Wall -Werror
+  929  ./t A1.txt W1.txt W2.txt W3.txt
+  930  gcc -o t test.c -Wall -Werror
+  931  ./t A1.txt W1.txt W2.txt W3.txt
+  932  gcc -o t test.c -Wall -Werror
+  933  ./t A1.txt W1.txt W2.txt W3.txt
+  934  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  935  gcc -o t test.c -Wall -Werror
+  936  ./t A1.txt W1.txt W2.txt W3.txt
+  937  gcc -o t test.c -Wall -Werror
+  938  ./t A1.txt W1.txt W2.txt W3.txt
+  939  gcc -o t test.c -Wall -Werror
+  940  ./t A1.txt W1.txt W2.txt W3.txt
+  941  gcc -o t test.c -Wall -Werror
+  942  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  943  ./t A1.txt W1.txt W2.txt W3.txt
+  944  gcc -o t test.c -Wall -Werror
+  945  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  946  ./t A1.txt W1.txt W2.txt W3.txt
+  947  cd Desktop/A4
+  948  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  949  gcc -o t test.c -Wall -Werror
+  950  ./t A1.txt W1.txt W2.txt W3.txt
+  951  cd Desktop/A4
+  952  gcc -o t test.c -Wall -Werror
+  953  ./t A1.txt W1.txt W2.txt W3.txt
+  954  cd Desktop/A4
+  955  gcc -o t test.c -Wall -Werror
+  956  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  957  ./t A1.txt W1.txt W2.txt W3.txt
+  958  gcc -o t test.c -Wall -Werror
+  959  ./t A1.txt W1.txt W2.txt W3.txt
+  960  gcc -o t test.c -Wall -Werror
+  961  ./t A1.txt W1.txt W2.txt W3.txt
+  962  gcc -o t test.c -Wall -Werror
+  963  ./t A1.txt W1.txt W2.txt W3.txt
+  964  gcc -o t test.c -Wall -Werror
+  965  ./t A1.txt W1.txt W2.txt W3.txt
+  966  gcc -o t test.c -Wall -Werror
+  967  ./t A1.txt W1.txt W2.txt W3.txt
+  968  gcc -o t test.c -Wall -Werror
+  969  ./t A1.txt W1.txt W2.txt W3.txt
+  970  gcc -o t test.c -Wall -Werror
+  971  ./t A1.txt W1.txt W2.txt W3.txt
+  972  cd Desktop/A4/
+  973  gcc -o t test.c -Wall -Werror
+  974  ./t A1.txt W1.txt W2.txt W3.txt
+  975  gcc -o t test.c -Wall -Werror
+  976  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+  977  gcc -o matrixmult_multi matrixmult_multiw.c -Wall -Werror
+  978  ./matrixmult_multiw A1.txt W1.txt W2.txt W3.txt
+  979  ./matrixmult_multi A1.txt W1.txt W2.txt W3.txt
+  980  cd Desktop/A4
+  981  gcc -o t test.c -Wall -Werror
+  982  ./t A1.txt W1.txt W2.txt W3.txt
+  983  gcc -o t test.c -Wall -Werror
+  984  ./t A1.txt W1.txt W2.txt W3.txt
+  985  gcc -o t test.c -Wall -Werror
+  986  ./t A1.txt W1.txt W2.txt W3.txt
+  987  gcc -o t test.c -Wall -Werror
+  988  ./t A1.txt W1.txt W2.txt W3.txt
+  989  gcc -o t test.c -Wall -Werror
+  990  ./t A1.txt W1.txt W2.txt W3.txt
+  991  gcc -o t test.c -Wall -Werror
+  992  ./t A1.txt W1.txt W2.txt W3.txt
+  993  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  994  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  995  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  996  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  997  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+  998  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+  999  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1000  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1001  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1002  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1003  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1004  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1005  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1006  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1007  /matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1008  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1009  /matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1010  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1011  cd Desktop/A4
+ 1012  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1013  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1014  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1015  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1016  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1017  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1018  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1019  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1020  /matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1021  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1022  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1023  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1024  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1025  cd Desktop/A4
+ 1026  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1027  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1028  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1029  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1030  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1031  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1032  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1033  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1034  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1035  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1036  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1037  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1038  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1039  cd Desktop/A4
+ 1040  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1041  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1042  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1043  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1044  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1045  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1046  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1047  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1048  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1049  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1050  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1051  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1052  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1053  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1054  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1055  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1056  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1057  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1058  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1059  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1060  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1061  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1062  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1063  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1064  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1065  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1066  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1067  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1068  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1069  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1070  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1071  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1072  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1073  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1074  cd Desktop/A4
+ 1075  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1076  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1077  cd Desktop/A4
+ 1078  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1079  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1080  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1081  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1082  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1083  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1084  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1085  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1086  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1087  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1088  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1089  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1090  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1091  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1092  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1093  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1094  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1095  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1096  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1097  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werro
+ 1098  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1099  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1100  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1101  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1102  cs ~
+ 1103  cd ~
+ 1104  cd Desktop/a4
+ 1105  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1106  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1107  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1108  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1109  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1110  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1111  W4.txt W5.txt W6.txt W7.txt 
+ 1112  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1113  cd Desktop/a4
+ 1114  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1115  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1116  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1117  cd~
+ 1118  cd ~
+ 1119  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1120  cd Desktop/A4/
+ 1121  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1122  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1123  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1124  cd ~
+ 1125  cd Desktop/a4
+ 1126  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1127  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1128  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1129  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1130  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1131  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1132  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1133  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1134  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1135  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1136  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1137  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1138  cd Desktop/a4
+ 1139  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1140  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1141  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1142  cd Desktop/a4
+ 1143  gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+ 1144  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1145  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1146  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1147  cd Desktop/a4
+ 1148  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1149  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1150  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1151  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1152  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1153  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1154  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1155  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1156  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1157  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1158  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1159  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1160  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1161  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1162  ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1163  cat 14448.out
+ 1164  cat 14448.err
+ 1165  time ./matrixmult_multiw_deep A1.txt W1.txt W2.txt W3.txt
+ 1166  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1167  valgrind
+ 1168  sudo apt install valgrind
+ 1169  valgrind --leak-check=full  ./main
+ 1170  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1171  valgrind
+ 1172  valgrind --leak-check=full  ./mai
+ 1173  valgrind --leak-check=full  ./main
+ 1174  valgrind --leak-check=full  ./matrixmult_multiw_deep
+ 1175  cd ~
+ 1176  cd Desktop/A4
+ 1177  cd ~
+ 1178  cd Desktop/a4
+ 1179  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1180  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1181  ./matrixmult_multiw_deep test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+ 1182  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+ 1183  cd cs149/A4
+ 1184  git add .
+ 1185  git commit -m "updated A4" -a
+ 1186  git push -u origin master
+ 1187  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1188  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1189  ./matrixmult_multiw_deep test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+ 1190  cd cs149/A4
+ 1191  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1192  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1193  ./matrixmult_multiw_deep test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+ 1194  cd cs149/A4
+ 1195  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1196  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1197  ./matrixmult_multiw_deep test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+ 1198  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1199  ./matrixmult_multiw_deep test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+ 1200  /matrixmult_multiw_deep test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+ 1201  ./matrixmult_multiw_deep test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+ 1202  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1203  ./matrixmult_multiw_deep test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+ 1204  gcc -o matrixmult matrixmult.c -Wall -Werror
+ 1205  gcc -o matrixmult_multiw_deep matrixmult_multiw_deep.c -Wall -Werror
+ 1206  ./matrixmult_multiw_deep test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+ 1207  git clone https://abelseno30@bitbucket.org/abelseno/cs149.git
+ 1208  cd apue.3e/signals/
+ 1209  make all
+ 1210  ./sigusr &
+ 1211  kill -SIGUSR1 2859
+ 1212  kill -SIGUSR2 2859
+ 1213  kill -SIGCONT 2859
+ 1214  kill -9 2859
+ 1215  history > worksheet9.log
