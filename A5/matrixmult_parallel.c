@@ -110,13 +110,18 @@ int main(int argc, char *argv[]) {
     if (readMatrixFile(argv[1], W) == 1)
         return 1;
 
-    // Process A matrix
-    char buffer[100];
-    while (read(STDIN_FILENO, buffer, sizeof(buffer)) > 0) {
+    while (1) {
+
+        // Process A matrix
+        char buffer[100];
+        int n;
+
+        read(STDIN_FILENO, &n, sizeof(int));
+        read(STDIN_FILENO, buffer, sizeof(char) * n);
+
         // Check if buff contains a new-line character ('\n')
         if (buffer[0] == '\0') {
-           printf("HELLO\n");
-           break;
+            break;
         }
 
         // Read matrix A from the pipe
@@ -125,6 +130,7 @@ int main(int argc, char *argv[]) {
 
         matrixCalculation(A, W, &result, &resultRows);
     }
+
 
     // Print the resulting matrix
     printf("Resulting Matrix:\n");
