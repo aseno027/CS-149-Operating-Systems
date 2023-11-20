@@ -13,6 +13,46 @@
 #include <fcntl.h>
 #include <string.h>
 
+#define ROWS 8
+#define COLS 8
+
+/**
+ * This function reads a matrix from a file and saves it
+ * Assumption: matrices file exists in the directory
+ * Input parameters: filename, matrix
+ * Returns: a integer (1 == fail or 0 == success)
+**/
+int readMatrixFile(const char *filename, int matrix[ROWS][COLS]) {
+    FILE *fp = fopen(filename, "r");
+    if (fp == NULL) {
+        fprintf(stderr, "error: cannot open file %s\n", filename);
+        fprintf(stderr, "Terminating, exit code 1.\n");
+        return 1;
+    }
+
+    const char s[2] = " ";
+    char values[80];
+    int row = 0;
+
+    // Read lines from the file and process them
+    while (fgets(values, sizeof(values), fp) && row < ROWS) {
+
+        char *token = strtok(values, s);
+        int col = 0;
+
+        // Tokenize the line and fill the matrix row with values
+        while (token != NULL && col < COLS) {
+            matrix[row][col] = atoi(token);
+            token = strtok(NULL, s);
+            col++;
+        }
+        row++;
+    }
+
+    fclose(fp);
+    return 0;
+}
+
 /**
  * This is the main function that executes multiple matrix multiplications in parallel. It reads all matrices for all executions from stdin on one line of input.
  * Input parameters: argc (the number of command-line arguments), argv (an array of strings containing the command-line arguments)
@@ -102,8 +142,43 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    // Parent process
+    int A[ROWS][COLS] = {0};
+    // Read matrix A
+    if (readMatrixFile(argv[1], A) == 1)
+        return 1;
+
+    for (int i = 0; i < argc - 2; i++) {
+        write(pipes[i][1], A, sizeof(int) * ROWS);
+    }
     
+    char line[100];
+
+
+    while (fgets(line, sizeof(line), stdin) != NULL) {
+        fflush(stdin);
+
+        line[strlen(line) - 1] = '\0';
+        int Ai[ROWS][COLS] = {0};
+
+        if (readMatrixFile(line, Ai) == 1)
+            return 1;
+
+        for (int i = 0; i < argc - 2; i++) {
+            write(pipes[i][1], Ai, sizeof(int) * ROWS);
+        }
+
+    }
+
+    for (int i = 0; i < argc - 2; i++) {
+        A[0][0] = -1;
+        write(pipes[i][1], A, sizeof(int) * ROWS);
+    }
+
+
+    /*
+
+    // Parent process
+
     // Write the A matrix file name from command line to pipe
     int n = strlen(argv[1]);
 
@@ -129,11 +204,15 @@ int main(int argc, char *argv[]) {
 
     }
 
+    /*
     // Send null character to child to terminate loop
     for (int i = 0; i < argc - 2; i++) {
-        char termination_signal = '\0';
-        write(pipes[i][1], &termination_signal, sizeof(char));
+        line[0] = '\0';
+        int numChar = strlen(line) + 1;
+        write(pipes[i][1], &numChar, sizeof(int));
+        write(pipes[i][1], line, strlen(line) + 1);
     }
+    */
 
     // Close the write ends of all pipes
     for (int i = 0; i < argc - 2; i++) {
