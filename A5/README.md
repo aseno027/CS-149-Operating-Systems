@@ -171,6 +171,7 @@
 **Average Runtime (We ran the program 3 times using the time command):** 15.091 seconds
 
 **No Memory Leaks Using Valgrind:**
+
 	$ valgrind --leak-check=full ./matrixmult_multiwa test/A1.txt test/W1.txt test/W2.txt test/W3.txt
 	==4742== Memcheck, a memory error detector
 	==4742== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
