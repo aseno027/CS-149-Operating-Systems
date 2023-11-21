@@ -1,58 +1,46 @@
-**Assignment 3 FA23**
+**Assignment 5 FA23**
 
-* Description: In this assignment, we developed a program named matrixmult_multiw that executes multiple matrix multiplications in parallel. This program reads a single A matrix and any number of additional W matrices as command-line arguments. Each pair of A and Wi matrices will be processed in parallel by spawning child processes that execute the matrixmult_parallel program. The results of these matrix multiplications, along with diagnostic messages, will be written to output and error files.
+* Description: This C program, matrixmult_multiwa.c, extends the functionality of Assgt3, introducing a dynamic approach to handle an arbitrary number of input matrices. It continuously reads new matrices (Anew) from stdin, multiplying each Anew with pre-existing Wi matrices in child processes. The resulting matrices are stored and dynamically reallocated in memory as needed.
 * Author names: Abel Seno & Amirali Marsahifar
 * Author emails: abel.seno@sjsu.edu & amirali.marashifar@sjsu.edu
-* Last modified date: 10/11/2023
-* Creation date: 10/7/2023
+* Last modified date: 11/20/2023
+* Creation date: 11/9/2023
 
 **Code:**
 
-* **Important:** Compile the program "matrixmult_parallel.c" before compiling matrixmult_multiw.c to create "./matrixmult_parallel" which is used in matrixmult_multiw.c
+* **Important:** Compile the program "matrixmult.c" before compiling matrixmult_multiw.c to create "./matrixmult" which is used in matrixmult_multiwa.c
 
-* Compile this program first: gcc -o matrixmult_parallel matrixmult_parallel.c -Wall -Werror
+* Compile this program first: gcc -o matrixmult matrixmult.c -Wall -Werror
 	
-* Then compile the program: gcc -o matrixmult_multiw matrixmult_multiw.c -Wall -Werror
+* Then compile the program: gcc -o matrixmult_multiwa matrixmult_multiwa.c -Wall -Werror
 
 **Test Cases:**
 
-* Test cases are located in the A3/test directory.
+* Test cases are located in the A5/test directory.
 * To run them, use the following command format: 
-	./matrixmult_multiw test/[TestFileNameA] test/[TestFileNameW1] test/[TestFileNameW2] ... test/[TestFileNameWn]
+	./matrixmult_multiwa test/[TestFileNameA] test/[TestFileNameW1] test/[TestFileNameW2] ... test/[TestFileNameWn]
 
 **Test Case:**
 
-**Input:** ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+**Input:** ./matrixmult_multiwa test/A1.txt test/W1.txt test/W2.txt test/W3.txt
 
 **Then:** There will be six new files create which are three somePID.out and three somePID.err files.
 
 **Example Output:**
 
-	$ ./matrixmult_multiw test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+	$ ./matrixmult_multiwa test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+	test/A2.txt
+	test/A3.txt
+	test/A1.txt
 
-	$ cat 7255.out
-	Starting command 1: child 7255 pid of parent 7254
-	test/A1.txt = [
-	10 30 40 50 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	]
-	test/W1.txt = [
-	1 3 4 5 1 0 0 0 
-	2 4 5 0 0 0 0 0 
-	1 1 5 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	]
-	Result of test/A1.txt*test/W1.txt = [
+	$ cat 4557.out
+	Starting command 1: child 4557 pid of parent 4556
+	test/W1.txt
+	test/A1.txt
+	test/A2.txt
+	test/A3.txt
+	test/A1.txt
+	Resulting Matrix:
 	110 190 390 50 10 0 0 0 
 	0 0 0 0 0 0 0 0 
 	0 0 0 0 0 0 0 0 
@@ -61,35 +49,43 @@
 	0 0 0 0 0 0 0 0 
 	0 0 0 0 0 0 0 0 
 	0 0 0 0 0 0 0 0 
-	]
-	Finished child 7255 pid of parent 7254
-	Exited with exitcode = 0
+	70 150 190 50 10 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	11 19 39 5 1 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	110 190 390 50 10 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	Finished child 4557 pid of parent 4556
+	Exited with exit code = 0
 
-	$ cat 7255.err
+	$ cat 4557.err
 
-	$ cat 7256.out
-	Starting command 2: child 7256 pid of parent 7254
-	test/A1.txt = [
-	10 30 40 50 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	]
-	test/W2.txt = [
-	10 3 4 5 1 0 0 0 
-	20 4 5 0 0 0 0 0 
-	10 1 5 0 0 0 0 0
-	10 0 0 0 0 0 0 0
-	20 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	]
-	Result of test/A1.txt*test/W2.txt = [
+	$ cat 4558.out
+	Starting command 2: child 4558 pid of parent 4556
+	test/W2.txt
+	test/A1.txt
+	test/A2.txt
+	test/A3.txt
+	test/A1.txt
+	Resulting Matrix:
 	1600 190 390 50 10 0 0 0 
 	0 0 0 0 0 0 0 0 
 	0 0 0 0 0 0 0 0 
@@ -98,36 +94,43 @@
 	0 0 0 0 0 0 0 0 
 	0 0 0 0 0 0 0 0 
 	0 0 0 0 0 0 0 0 
-	]
-	Finished child 7256 pid of parent 7254
-	Exited with exitcode = 0
+	700 150 190 50 10 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	280 19 39 5 1 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	1600 190 390 50 10 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	Finished child 4558 pid of parent 4556
+	Exited with exit code = 0
 
-	$ cat 7256.err
+	$ cat 4558.err
 
-	$ cat 7257.out
-	Starting command 3: child 7257 pid of parent 7254
-	test/A1.txt = [
-	10 30 40 50 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	]
-
-	test/W3.txt = [
-	1 3 4 5 1 0 0 0 
-	2 4 5 2 2 0 0 0 
-	1 1 5 11 12 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	0 0 0 0 0 0 0 0 
-	]
-	Result of test/A1.txt*test/W3.txt = [
+	$ cat .out
+	Starting command 3: child 4559 pid of parent 4556
+	test/W3.txt
+	test/A1.txt
+	test/A2.txt
+	test/A3.txt
+	test/A1.txt
+	Resulting Matrix:
 	110 190 390 550 550 0 0 0 
 	0 0 0 0 0 0 0 0 
 	0 0 0 0 0 0 0 0 
@@ -136,23 +139,54 @@
 	0 0 0 0 0 0 0 0 
 	0 0 0 0 0 0 0 0 
 	0 0 0 0 0 0 0 0 
-	]
-	Finished child 7257 pid of parent 7254
-	Exited with exitcode = 0
-
-	$ cat 7257.err
+	70 150 190 110 70 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	11 19 39 55 55 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	110 190 390 550 550 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	0 0 0 0 0 0 0 0 
+	Finished child 4559 pid of parent 4556
+	Exited with exit code = 0
 	
-	$ cat 2887.err
-	Killed with signal 15
+	$ cat 4559.err
+	
+**Average Runtime (We ran the program 3 times using the time command):** 15.091 seconds
 
-**Additional Information:**
+**No Memory Leaks Using Valgrind:**
+	$ valgrind --leak-check=full ./matrixmult_multiwa test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+	==4742== Memcheck, a memory error detector
+	==4742== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+	==4742== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+	==4742== Command: ./matrixmult_multiwa test/A1.txt test/W1.txt test/W2.txt test/W3.txt
+	==4742== 
+	test/A2.txt
+	test/A3.txt
+	test/A1.txt
+	==4742== 
+	==4742== HEAP SUMMARY:
+	==4742==     in use at exit: 0 bytes in 0 blocks
+	==4742==   total heap usage: 10 allocs, 10 frees, 23,392 bytes allocated
+	==4742== 
+	==4742== All heap blocks were freed -- no leaks are possible
+	==4742== 
+	==4742== For lists of detected and suppressed errors, rerun with: -s
+	==4742== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
-To test for the last two lines of the Example Output, we intentionally introduced a sleep(100) command in the matrixmult_parallel.c program. This sleep command is used to simulate a situation where the matrix multiplication process takes a long time to complete. By doing this, we can demonstrate how to handle situations where a matrix multiplication process needs to be terminated manually.
-
-Inside the matrixmult_parallel.c program, locate the point in your code where the matrix multiplication computation occurs. Insert the sleep(100) command at this location, instructing the program to pause execution for 100 seconds, simulating a time-consuming operation. Recompile the matrixmult_parallel.c program after making this modification.
-
-Run the matrixmult_multiw.c program as you normally would, providing the appropriate input matrices as command-line arguments. When you observe that the matrix multiplication process initiated by matrixmult_parallel.c is taking a long time to complete, open another terminal window. In the new terminal window, use the "killall matrixmult_parallel" command. This command will terminate all running instances of the matrixmult_parallel program. If you have multiple instances running due to matrix multiplication tasks, this command will terminate all of them.
-
-As a result of forcefully terminating the matrixmult_parallel process, you will receive a message stating "Killed with signal 15" in a specific PID.err file. Please note that the sleep(100) command was added for testing and demonstration purposes only. In practice, the matrix multiplication processes should ideally complete in a reasonable time frame, and manual termination should be unnecessary.
-
-**Average Runtime (We ran the program 3 times using the time command):** 0.0423 seconds

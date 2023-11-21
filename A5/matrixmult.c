@@ -1,9 +1,9 @@
 /**
- * Description: This program performs matrix multiplication. It reads two input matrix files, multiplies them, and sends the result to another program. The progress is logged, and matrices are read from files provided as command-line arguments.
+ * Description: This C program performs matrix multiplication. It reads matrix W from the command-line argument and continuously reads matrices A from standard input. It creates child processes to perform matrix multiplication, and the resulting matrices are printed to standard output. The program stops when a termination indicator is received.
  * Author names: Abel Seno & Amirali Marsahifar
  * Author emails: abel.seno@sjsu.edu & amirali.marashifar@sjsu.edu
- * Last modified date: 11/1/2023
- * Creation date: 9/11/2023
+ * Last modified date: 11/20/2023
+ * Creation date: 11/9/2023
  **/
 
 #include <string.h>
@@ -24,6 +24,7 @@
 int readMatrixFile(const char *filename, int matrix[ROWS][COLS]) {
     FILE *fp = fopen(filename, "r");
     if (fp == NULL) {
+        // Print an error message if the file cannot be opened
         fprintf(stderr, "error: cannot open file %s\n", filename);
         fprintf(stderr, "Terminating, exit code 1.\n");
         return 1;
@@ -53,9 +54,9 @@ int readMatrixFile(const char *filename, int matrix[ROWS][COLS]) {
 }
 
 /**
- * This function performs a multiplication (dot product) of two matrices (A*W) or (Rsum*W)
- * Assumption: all matrix are 8x8
- * Input parameters: matrixA, matrixW, resultMatrix
+ * This function performs a multiplication (dot product) of two matrices (A*W).
+ * It dynamically allocates memory for the result matrix using malloc or realloc based on whether the result matrix already exists.
+ * Input parameters: matrixA, matrixW, resultMatrix, resultRows.
  * Returns: void
 **/
 void matrixCalculation(int matrixA[ROWS][COLS], int matrixW[ROWS][COLS], int ***resultMatrix, int *resultRows) {
@@ -86,14 +87,17 @@ void matrixCalculation(int matrixA[ROWS][COLS], int matrixW[ROWS][COLS], int ***
 }
 
 /**
- * This is the main function for the matrix multiplication program. It reads two input matrix files, performs matrix multiplication.
+ * This is the main function that reads matrix W from the command-line argument and continuously reads matrices A from standard input.
+ * It creates child processes to perform matrix multiplication, and the resulting matrices are allocated to result.
+ * The program stops when a termination indicator is received.
  * Input parameters: argc (the number of command-line arguments), argv (an array of strings containing the command-line arguments)
  * Returns: 0 (success) or 1 (failure)
 **/
 int main(int argc, char *argv[]) {
 
-    // Check for 1 files (W)
+    // Check for 1 file (W)
     if (argc != 2) {
+        // Print an error message if the number of files is not as expected
         fprintf(stderr, "Error - expecting exactly 2 files as input.\n");
         fprintf(stderr, "Terminating, exit code 1.\n");
         fprintf(stderr, "GOT: %d\n", argc);
@@ -137,4 +141,3 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-

@@ -2,8 +2,8 @@
  * Description: This C program executes multiple matrix multiplications in parallel. It reads matrices for execution from command-line arguments and creates child processes for each matrix multiplication task. Each child process redirects its output to separate output and error files. The parent process waits for all child processes to complete and reports their status.
  * Author names: Abel Seno & Amirali Marsahifar
  * Author emails: abel.seno@sjsu.edu & amirali.marashifar@sjsu.edu
- * Last modified date: 10/18/2023
- * Creation date: 10/7/2023
+ * Last modified date: 11/20/2023
+ * Creation date: 11/9/2023
  **/
 
 #include <stdio.h>
@@ -59,9 +59,8 @@ int readMatrixFile(const char *filename, int matrix[ROWS][COLS]) {
  * Returns: 0 (success) or integer greater than 0 (failure)
 **/
 int main(int argc, char *argv[]) {
-
-    // Check the number of arguments
-    if(argc < 3){ // Check for 2 files
+// Check the number of arguments
+    if (argc < 3) { // Check for 2 files
         fprintf(stderr, "Error - expecting at least 2 files as input.\n");
         fprintf(stderr, "Terminating, exit code 1.\n");
         return 1;
@@ -78,9 +77,11 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    // Save child pid
+    int child_pids[argc - 2];
+
     // Loop through the W matrices and fork a child process for each
     for (int i = 2; i < argc; i++) {
-
         // Create a new process
         int pid = fork();
 
@@ -92,7 +93,6 @@ int main(int argc, char *argv[]) {
 
         // Child process
         if (pid == 0) {
-
             // Convert pid (Integer) to a String
             char pid_str[32];
             sprintf(pid_str, "%d", getpid());
@@ -124,7 +124,13 @@ int main(int argc, char *argv[]) {
             printf("Starting command %d: child %d pid of parent %d\n", index, getpid(), getppid());
             fflush(stdout);
 
-            //edirect stdin to read from the pipe
+            printf("%s\n", argv[i]);  // Print the file path for matrix Wi
+            fflush(stdout);
+
+            printf("%s\n", argv[1]);  // Print the file path for matrix Ai
+            fflush(stdout);
+
+            // Redirect stdin to read from the pipe
             dup2(pipes[i - 2][0], STDIN_FILENO);
 
             // Close the files we don't need
@@ -132,17 +138,26 @@ int main(int argc, char *argv[]) {
             close(pipes[i - 2][1]);
 
             // Use execvp to replace the child process with matrixmult_parallel
-            char *matrixmult_args[] = {"./matrixmult_parallel", argv[i], NULL};
-            execvp("./matrixmult_parallel", matrixmult_args);
+            char *matrixmult_args[] = {"./matrixmult", argv[i], NULL};
+            execvp("./matrixmult", matrixmult_args);
 
             // execvp() was unsuccessful
             fprintf(stderr, "execvp failed\n");
             return 1;
-
+        } else { // save child pids
+            child_pids[i - 2] = pid;
         }
     }
 
+    // Parent process
+    // Close the read end of all pipes
+    for (int i = 0; i < argc - 2; i++) {
+        close(pipes[i][0]);
+    }
+
+    // Write first A matrix from the command line to the pipe
     int A[ROWS][COLS] = {0};
+
     // Read matrix A
     if (readMatrixFile(argv[1], A) == 1)
         return 1;
@@ -150,10 +165,9 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < argc - 2; i++) {
         write(pipes[i][1], A, sizeof(int) * ROWS);
     }
-    
+
+    // Read from stdin and write matrix Ai to the pipe
     char line[100];
-
-
     while (fgets(line, sizeof(line), stdin) != NULL) {
         fflush(stdin);
 
@@ -164,59 +178,90 @@ int main(int argc, char *argv[]) {
             return 1;
 
         for (int i = 0; i < argc - 2; i++) {
-            write(pipes[i][1], Ai, sizeof(int) * ROWS);
+            // Open the child out and err files for the parent:
+            // Convert pid (Integer) to a String
+            char pid_str[32];
+            sprintf(pid_str, "%d", child_pids[i]);
+
+            // Create output and error file names using the PID
+            char out_file[64];
+            char err_file[64];
+            strcpy(out_file, pid_str);
+            strcpy(err_file, pid_str);
+            strcat(out_file, ".out");
+            strcat(err_file, ".err");
+
+            // Open output and error files
+            int out_fd = open(out_file, O_RDWR | O_CREAT | O_APPEND, 0777);
+            int err_fd = open(err_file, O_RDWR | O_CREAT | O_APPEND, 0777);
+
+            // Redirect stdout and stderr to the output and error files
+            dup2(out_fd, 1);
+            dup2(err_fd, 2);
+
+            // Close the files we don't need
+            close(out_fd);
+            close(err_fd);
+
+            printf("%s\n", line);  // Print the file path for matrix Ai
+            fflush(stdout);
         }
 
+        for (int i = 0; i < argc - 2; i++) {
+            write(pipes[i][1], Ai, sizeof(int) * ROWS);
+        }
     }
 
+    // Write a termination indicator to the pipe and close the pipe
     for (int i = 0; i < argc - 2; i++) {
-        A[0][0] = -1;
+        A[0][0] = -1; // What to look for
         write(pipes[i][1], A, sizeof(int) * ROWS);
     }
 
-
-    /*
-
-    // Parent process
-
-    // Write the A matrix file name from command line to pipe
-    int n = strlen(argv[1]);
-
-    for (int i = 0; i < argc - 2; i++) {
-        write(pipes[i][1], &n, sizeof(int));
-        write(pipes[i][1], argv[1], n);
-    }
-
-    char line[100];
-
-    // Read input until EOF
-    while (fgets(line, sizeof(line), stdin) != NULL) {
-        fflush(stdin);
-
-        line[strlen(line - 1)] = '\0';
-        int numChar = strlen(line) + 1;
-
-        // Write the matrix to all child processes
-        for (int i = 0; i < argc - 2; i++) {
-            write(pipes[i][1], &numChar, sizeof(int));
-            write(pipes[i][1], line, strlen(line) + 1);
-        }
-
-    }
-
-    /*
-    // Send null character to child to terminate loop
-    for (int i = 0; i < argc - 2; i++) {
-        line[0] = '\0';
-        int numChar = strlen(line) + 1;
-        write(pipes[i][1], &numChar, sizeof(int));
-        write(pipes[i][1], line, strlen(line) + 1);
-    }
-    */
-
-    // Close the write ends of all pipes
+    // Close the read end of all pipes
     for (int i = 0; i < argc - 2; i++) {
         close(pipes[i][1]);
+    }
+
+    int status;
+    int child_pid;
+
+    while ((child_pid = wait(&status)) > 0) {
+        // Open the child out and err files for the parent:
+        // Convert pid (Integer) to a String
+        char pid_str[32];
+        sprintf(pid_str, "%d", child_pid);
+
+        // Create output and error file names using the PID
+        char out_file[64];
+        char err_file[64];
+        strcpy(out_file, pid_str);
+        strcpy(err_file, pid_str);
+        strcat(out_file, ".out");
+        strcat(err_file, ".err");
+
+        // Open output and error files
+        int out_fd = open(out_file, O_RDWR | O_CREAT | O_APPEND, 0777);
+        int err_fd = open(err_file, O_RDWR | O_CREAT | O_APPEND, 0777);
+
+        // Redirect stdout and stderr to the output and error files
+        dup2(out_fd, 1);
+        dup2(err_fd, 2);
+
+        // Close the files we don't need
+        close(out_fd);
+        close(err_fd);
+
+        // Check if the child process terminated normally
+        if (WIFEXITED(status)) {
+            printf("Finished child %d pid of parent %d\n", child_pid, getpid());
+            fflush(stdout);
+            printf("Exited with exit code = %d\n", WEXITSTATUS(status));
+            fflush(stdout);
+        } else if (WIFSIGNALED(status)) { // Child process was terminated by a signal
+            fprintf(stderr, "Killed with signal %d\n", WTERMSIG(status));
+            return 1;
+        }
     }
 
     return 0;
