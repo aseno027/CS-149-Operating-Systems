@@ -123,7 +123,7 @@
 
 	$ cat 4558.err
 
-	$ cat .out
+	$ cat 4559.out
 	Starting command 3: child 4559 pid of parent 4556
 	test/W3.txt
 	test/A1.txt
