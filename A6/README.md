@@ -1,12 +1,10 @@
 **Assignment 6 FA23**
 
-/**
- * Description: This C program performs matrix multiplication using multi-threading. It reads a matrix from a file, receives input matrices from standard input, and calculates the result matrix by distributing the workload across multiple threads. The program utilizes pthreadsand includes synchronization using mutex to update the result matrix safely.
- * Author names: Abel Seno & Amirali Marsahifar
- * Author emails: abel.seno@sjsu.edu & amirali.marashifar@sjsu.edu
- * Last modified date: 12/6/2023
- * Creation date: 12/2/2023
- */
+* Description: This C program performs matrix multiplication using multi-threading. It reads a matrix from a file, receives input matrices from standard input, and calculates the result matrix by distributing the workload across multiple threads. The program utilizes pthreadsand includes synchronization using mutex to update the result matrix safely.
+* Author names: Abel Seno & Amirali Marsahifar
+* Author emails: abel.seno@sjsu.edu & amirali.marashifar@sjsu.edu
+* Last modified date: 12/6/2023
+* Creation date: 12/2/2023
 
 **Code:**
 
