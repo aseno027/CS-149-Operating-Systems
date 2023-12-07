@@ -1,9 +1,16 @@
+/**
+ * Description: This C program performs matrix multiplication. It reads matrix W from the command-line argument and continuously reads matrices A from standard input. It creates threads to perform matrix multiplication, and the resulting matrices are allocated to result. The program stops when a termination indicator is received.
+ * Author names: Abel Seno & Amirali Marsahifar
+ * Author emails: abel.seno@sjsu.edu & amirali.marashifar@sjsu.edu
+ * Last modified date: 12/6/2023
+ * Creation date: 12/2/2023
+ **/
+
 #include <pthread.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <time.h>
 
 #define ROWS 8
 #define COLS 8
@@ -11,15 +18,24 @@
 
 int A[ROWS][COLS];
 int W[ROWS][COLS];
-int result[ROWS][COLS];
-pthread_mutex_t mutex;
+int** result; // Dynamic 2D array for the result matrix
 
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+// Structure to represent a cell in the matrices
 typedef struct {
-    int row;
-    int col;
+    int row; // Row index of the cell
+    int col; // Column index of the cell
 } Cell;
 
-int readMatrixFile(const char *filename, int matrix[ROWS][COLS]){
+/**
+ * This function reads a matrix from a file and saves it
+ * Assumption: matrices file exists in the directory
+ * Input parameters: filename, matrix
+ * Returns: an integer (1 == fail or 0 == success)
+**/
+int readMatrixFile(const char *filename, int matrix[ROWS][COLS]) {
+    // Open the file for reading
     FILE *fp = fopen(filename, "r");
     if (fp == NULL) {
         fprintf(stderr, "error: cannot open file %s\n", filename);
@@ -28,87 +44,126 @@ int readMatrixFile(const char *filename, int matrix[ROWS][COLS]){
     }
 
     const char s[2] = " ";
-    char *token;
-    for (int i = 0; i < ROWS; i++) {
-        char values[80];
-        fgets(values, sizeof(values), fp);
-        token = strtok(values, s);
-        for (int j = 0; j < COLS; j++) {
-            if (token != NULL) {
-                matrix[i][j] = atoi(token);
-                token = strtok(NULL, s);
-            } else {
-                matrix[i][j] = 0;
-            }
+    char values[80];
+    int row = 0;
+
+    // Read lines from the file and process them
+    while (fgets(values, sizeof(values), fp) && row < ROWS) {
+
+        char *token = strtok(values, s);
+        int col = 0;
+
+        // Tokenize the line and fill the matrix row with values
+        while (token != NULL && col < COLS) {
+            matrix[row][col] = atoi(token);
+            token = strtok(NULL, s);
+            col++;
         }
+        row++;
     }
+
+    // Close the file
     fclose(fp);
     return 0;
 }
 
+/**
+ * This function represents the computation performed by each thread
+ * Input parameters: a Cell struct containing the row and column of the cell
+**/
 void *matrixCalculationThread(void *arg) {
     Cell *cell = (Cell *)arg;
     int sum = 0;
+
+    // Perform matrix multiplication for the given cell
     for (int k = 0; k < COLS; k++) {
         sum += A[cell->row][k] * W[k][cell->col];
     }
 
+    // Lock the mutex before updating the result matrix
     pthread_mutex_lock(&mutex);
     result[cell->row][cell->col] = sum;
     pthread_mutex_unlock(&mutex);
 
+    // Free the dynamically allocated memory for the Cell struct
     free(arg);
     pthread_exit(NULL);
 }
 
+
+/**
+ * This is the main function that reads matrix W from the command-line argument and continuously reads matrices A from standard input.
+ * It creates threads to perform matrix multiplication, and the resulting matrices are allocated to result.
+ * The program stops when a termination indicator is received.
+ * Input parameters: argc (the number of command-line arguments), argv (an array of strings containing the command-line arguments)
+ * Returns: 0 (success) or 1 (failure)
+**/
 int main(int argc, char *argv[]) {
-    if (argc != 3) {
+    // Check for the correct number of command-line arguments
+    if (argc != 2) {
         fprintf(stderr, "Error - cannot open file\n");
         fprintf(stderr, "Terminating, exit code 1.\n");
         return 1;
     }
 
-    struct timespec start, finish;
-    double elapsed;
-    clock_gettime(CLOCK_MONOTONIC, &start);
-
-    if (readMatrixFile(argv[1], A) == 1)
-        return 1; 
-    if (readMatrixFile(argv[2], W) == 1)
+    // Read the matrix W from the file specified in the command-line arguments
+    if (readMatrixFile(argv[1], W) == 1)
         return 1;
 
-    pthread_t threads[NUM_THREADS];
+    // Initialize the mutex
     pthread_mutex_init(&mutex, NULL);
 
+    // Allocate memory for the result matrix dynamically
+    result = (int **)malloc(ROWS * sizeof(int *));
     for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
-            Cell *cell = malloc(sizeof(Cell));
-            cell->row = i;
-            cell->col = j;
-            pthread_create(&threads[i * COLS + j], NULL, matrixCalculationThread, (void *)cell);
+        result[i] = (int *)malloc(COLS * sizeof(int));
+    }
+
+    printf("Result Matrix = \n");
+
+    // Read matrices from standard input until an end signal is received
+    while (read(STDIN_FILENO, A, sizeof(int) * ROWS)) {
+        // Check for the end signal
+        if (A[0][0] == -1) {
+            break;
         }
+
+        pthread_t threads[NUM_THREADS];
+
+        // Create threads for matrix multiplication
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                Cell *cell = malloc(sizeof(Cell));
+                cell->row = i;
+                cell->col = j;
+                pthread_create(&threads[i * COLS + j], NULL, matrixCalculationThread, (void *) cell);
+            }
+        }
+
+        // Wait for all threads to finish
+        for (int i = 0; i < NUM_THREADS; i++) {
+            pthread_join(threads[i], NULL);
+        }
+
+        // Lock the mutex before printing the result matrix
+        pthread_mutex_lock(&mutex);
+        for (int i = 0; i <  ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                printf("%d ", result[i][j]);
+            }
+            printf("\n");
+        }
+        pthread_mutex_unlock(&mutex);
     }
 
-    for (int i = 0; i < NUM_THREADS; i++) {
-        pthread_join(threads[i], NULL);
-    }
-
-    pthread_mutex_lock(&mutex);
-    printf("Result of A*W = [\n");
+    // Free dynamically allocated memory for the result matrix
     for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
-            printf("%d ", result[i][j]);
-        }
-        printf("\n");
+        free(result[i]);
     }
-    printf("]\n");
-    pthread_mutex_unlock(&mutex);
+    free(result);
 
+    // Destroy the mutex
     pthread_mutex_destroy(&mutex);
-
-    clock_gettime(CLOCK_MONOTONIC, &finish);
-    elapsed = (finish.tv_sec - start.tv_sec) + (finish.tv_nsec - start.tv_nsec) / 1e9;
-    printf("Runtime %f seconds\n", elapsed);
 
     return 0;
 }

@@ -2,7 +2,7 @@
  * Description: This C program executes multiple matrix multiplications in parallel. It reads matrices for execution from command-line arguments and creates child processes for each matrix multiplication task. Each child process redirects its output to separate output and error files. The parent process waits for all child processes to complete and reports their status.
  * Author names: Abel Seno & Amirali Marsahifar
  * Author emails: abel.seno@sjsu.edu & amirali.marashifar@sjsu.edu
- * Last modified date: 11/20/2023
+ * Last modified date: 12/6/2023
  * Creation date: 11/9/2023
  **/
 
