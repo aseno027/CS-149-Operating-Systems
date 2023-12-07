@@ -168,7 +168,7 @@
 	
 	$ cat 42624.err
 	
-**Average Runtime (We ran the program 3 times using the time command):** 14.134 seconds
+**Average Runtime (We ran the program 3 times using the time command):** 13.921 seconds
 
 **No Memory Leaks Using Valgrind:**
 

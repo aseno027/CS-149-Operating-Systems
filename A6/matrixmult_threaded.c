@@ -19,6 +19,7 @@
 int A[ROWS][COLS];
 int W[ROWS][COLS];
 int** result; // Dynamic 2D array for the result matrix
+int resultRows; // Used when we realloc
 
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
@@ -26,6 +27,7 @@ pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 typedef struct {
     int row; // Row index of the cell
     int col; // Column index of the cell
+    int result_row; // Row index of the cell when we realloc
 } Cell;
 
 /**
@@ -82,7 +84,7 @@ void *matrixCalculationThread(void *arg) {
 
     // Lock the mutex before updating the result matrix
     pthread_mutex_lock(&mutex);
-    result[cell->row][cell->col] = sum;
+    result[cell->result_row][cell->col] = sum; // Critical section
     pthread_mutex_unlock(&mutex);
 
     // Free the dynamically allocated memory for the Cell struct
@@ -113,13 +115,6 @@ int main(int argc, char *argv[]) {
     // Initialize the mutex
     pthread_mutex_init(&mutex, NULL);
 
-    // Allocate memory for the result matrix dynamically
-    result = (int **)malloc(ROWS * sizeof(int *));
-    for (int i = 0; i < ROWS; i++) {
-        result[i] = (int *)malloc(COLS * sizeof(int));
-    }
-
-    printf("Result Matrix = \n");
 
     // Read matrices from standard input until an end signal is received
     while (read(STDIN_FILENO, A, sizeof(int) * ROWS)) {
@@ -128,36 +123,59 @@ int main(int argc, char *argv[]) {
             break;
         }
 
+        if (result == NULL){
+            // Allocate memory for the result matrix dynamically
+            resultRows = ROWS;
+            result = (int **)malloc(ROWS * sizeof(int *));
+            for (int i = 0; i < ROWS; i++) {
+                result[i] = (int *) malloc(COLS * sizeof(int));
+            }
+        }else{
+            // Resize the result matrix using realloc
+            resultRows += ROWS;
+            result = (int **)realloc(result, resultRows * sizeof(int *));
+            for (int i = resultRows - ROWS; i < resultRows; i++) {
+                result[i] = (int *)malloc(COLS * sizeof(int));
+            }
+        }
+
         pthread_t threads[NUM_THREADS];
 
         // Create threads for matrix multiplication
-        for (int i = 0; i < ROWS; i++) {
+        int count = 0;
+        printf("ROWS: %d\n", resultRows);
+        for (int i = resultRows - ROWS; i < resultRows; i++) {
             for (int j = 0; j < COLS; j++) {
                 Cell *cell = malloc(sizeof(Cell));
-                cell->row = i;
+               	cell->row = count;
                 cell->col = j;
-                pthread_create(&threads[i * COLS + j], NULL, matrixCalculationThread, (void *) cell);
+                cell->result_row = i;
+                pthread_create(&threads[count * COLS + j], NULL, matrixCalculationThread, (void *) cell);
             }
+            count++;
         }
+        count = 0;
 
         // Wait for all threads to finish
         for (int i = 0; i < NUM_THREADS; i++) {
             pthread_join(threads[i], NULL);
         }
 
-        // Lock the mutex before printing the result matrix
-        pthread_mutex_lock(&mutex);
-        for (int i = 0; i <  ROWS; i++) {
-            for (int j = 0; j < COLS; j++) {
-                printf("%d ", result[i][j]);
-            }
-            printf("\n");
-        }
-        pthread_mutex_unlock(&mutex);
     }
 
-    // Free dynamically allocated memory for the result matrix
-    for (int i = 0; i < ROWS; i++) {
+    // Lock the mutex before printing the result matrix
+    pthread_mutex_lock(&mutex);
+    printf("Result Matrix = \n");
+    for (int i = 0; i <  resultRows; i++) {
+        for (int j = 0; j < COLS; j++) {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+    pthread_mutex_unlock(&mutex);
+
+    // Free allocated memory
+    for (int i = 0; i < resultRows; ++i) {
         free(result[i]);
     }
     free(result);
