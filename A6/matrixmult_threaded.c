@@ -143,7 +143,6 @@ int main(int argc, char *argv[]) {
 
         // Create threads for matrix multiplication
         int count = 0;
-        printf("ROWS: %d\n", resultRows);
         for (int i = resultRows - ROWS; i < resultRows; i++) {
             for (int j = 0; j < COLS; j++) {
                 Cell *cell = malloc(sizeof(Cell));
